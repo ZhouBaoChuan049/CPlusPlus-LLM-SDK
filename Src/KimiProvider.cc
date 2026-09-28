@@ -52,13 +52,13 @@ void KimiProvider::InitModel(
 
 std::string KimiProvider::GetModelName()
 {
-    return "Kimi K3";
+    return "Kimi K2.6";
 }
 
 ModelInfo KimiProvider::GetModelDescription()
 {
     std::string Description =
-        "Kimi K3是月之暗面(Moonshot AI)推出的旗舰级、"
+        "Kimi K2.6是月之暗面(Moonshot AI)推出的旗舰级、"
         "开放权重、超长上下文、重点强化 Coding 和 Agent 能力的大模型";
 
     ModelInfo info(
@@ -77,7 +77,7 @@ std::string KimiProvider::Serialize(
     std::unordered_map<std::string,std::string>& RequestPrograms,
     bool isstream)
 {
-    std::string model = "kimi-k3";
+    std::string model = "kimi-k2.6";
     bool stream = isstream;
     int Max_token = 0;
     if(RequestPrograms.find("Max_token") != RequestPrograms.end())
@@ -450,7 +450,7 @@ std::string KimiProvider::SendMessagesAsStream(
                     true
                 );
 
-                return false;
+                return true;
             }
             Json::Value DataJson;
 
