@@ -1,3 +1,6 @@
+#ifndef __DATA_MANAGER__
+#define __DATA_MANAGER__
+
 #include "Common.h"
 #include "CommonStruct.h"
 #include "sqlite3.h"
@@ -30,3 +33,5 @@ namespace Cplusplus_LLM_Provider
         mutable std::mutex _mutex;
     };
 }
+
+#endif
