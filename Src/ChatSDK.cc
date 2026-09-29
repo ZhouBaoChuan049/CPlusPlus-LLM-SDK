@@ -30,20 +30,26 @@ namespace Cplusplus_LLM_Provider
             _llmManager.RegistrModule("kimi-k2.6",move(kimiProvider));
             LogModule::INFO("{}模型注册成功","kimi-k2.6");
         }
+        std::unordered_set<std::string> Check ;
         for(auto conf : configs)
         {
             auto Config = std::dynamic_pointer_cast<OllamaConfig>(conf);
-            std::string ModelName = Config->_modelName ;
-            if(!_llmManager.IsThisModelAvailable(ModelName))
+            if(Config!= nullptr)
             {
-                auto ollamaProvider = std::make_unique<OllamaProvider>();
-                _llmManager.RegistrModule(ModelName,move(ollamaProvider));
-                LogModule::INFO("{}模型注册成功",ModelName);
+                std::string ModelName = Config->_modelName ;
+                if(Check.find(ModelName) == Check.end())
+                {
+                    Check.insert(ModelName);//去重机制
+                    if(!_llmManager.IsThisModelAvailable(ModelName))
+                    {
+                        auto ollamaProvider = std::make_unique<OllamaProvider>();
+                        _llmManager.RegistrModule(ModelName,move(ollamaProvider));
+                        LogModule::INFO("{}模型注册成功",ModelName);
+                    }
+                }
             }
         }
     }
-
-
     bool ChatSDK::initModels(const std::vector<std::shared_ptr<Config>>& configs)
     {
         registerAllProvider(configs);
@@ -52,25 +58,89 @@ namespace Cplusplus_LLM_Provider
         return true;
     }
 
-
     void ChatSDK::initProviders(const std::vector<std::shared_ptr<Config>>& configs)
     {
-
+        std::unordered_set<std::string> Check ;//还是去重操作
+        for(auto Conf : configs)
+        {
+            if(auto Config = std::dynamic_pointer_cast<APIConfig>(Conf))
+            {
+                std::string ModelName = Config->_modelName;
+                if(Check.find(ModelName) == Check.end())
+                {
+                    Check.insert(ModelName);
+                    if(ModelName == "deepseek-flash" ||
+                        ModelName == "gpt-5.5" || ModelName == "kimi-k2.6"){
+                            initAPIModelProviders(ModelName , Config);
+                    }else{
+                        LogModule::ERROR("对不起!你要求的模型我们暂时不支持,敬请期待!");
+                    }
+                }
+            }
+            else if(auto Config = std::dynamic_pointer_cast<OllamaConfig>(Conf))
+            {
+                std::string ModelName = Config->_modelName;
+                if(Check.find(ModelName) == Check.end())
+                {
+                    Check.insert(ModelName);
+                    if(ModelName == "deepseek-r1:1.5b"){
+                            initOllamaModelProviders(ModelName , Config);
+                    }else{
+                        LogModule::ERROR("对不起!你要求的模型我们暂时不支持,敬请期待!");
+                    }
+                }
+            }
+        }
     }
     bool ChatSDK::initAPIModelProviders(const std::string& modelName, const std::shared_ptr<APIConfig>& apiConfig)
     {
-
+        if(modelName == ""){
+            LogModule::ERROR("参数不太对,模型名称未填写!");
+            return false ;
+        }
+        if(apiConfig == nullptr || apiConfig->_apiKey == ""){
+            LogModule::ERROR("参数错误,模型配置参数为空或APIkey未填写");
+            return false ;
+        }
+        if(_llmManager.IsThisModelAvailable(modelName)){
+            LogModule::INFO("模型已就绪!不需要再次初始化.");
+            return true ;
+        }
+        if(!_llmManager.InitThisModule(modelName , apiConfig))
+        {
+            LogModule::ERROR("模型{}初始化失败!",modelName);
+            return false ;
+        }
+        _modelConfigs[modelName] = apiConfig ;
+        LogModule::INFO("模型{}初始化成功!",modelName);
+        return true ;
     }
-    bool ChatSDK::initOllamaModelProviders(const std::string& modelName, const std::shared_ptr<OllamaConfig>& config)
+    bool ChatSDK::initOllamaModelProviders(const std::string& modelName, const std::shared_ptr<OllamaConfig>& ollamaconfig)
     {
-
+        if(modelName == ""){
+            LogModule::ERROR("参数不太对,模型名称未填写!");
+            return false ;
+        }
+        if(ollamaconfig == nullptr ){
+            LogModule::ERROR("参数错误,模型配置参数为空");
+            return false ;
+        }
+        if(_llmManager.IsThisModelAvailable(modelName)){
+            LogModule::INFO("模型已就绪!不需要再次初始化.");
+            return true ;
+        }
+        if(!_llmManager.InitThisModule(modelName , ollamaconfig))
+        {
+            LogModule::ERROR("模型{}初始化失败!",modelName);
+            return false ;
+        }
+        _modelConfigs[modelName] = ollamaconfig ;
+        LogModule::INFO("模型{}初始化成功!",modelName);
+        return true ;
     }
-
-
-
     std::string ChatSDK::createSession(const std::string& modelName)
     {
-
+        
     }
     std::shared_ptr<Session> ChatSDK::getSession(const std::string& sessionId)
     {

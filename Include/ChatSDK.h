@@ -22,7 +22,7 @@ namespace Cplusplus_LLM_Provider
         void registerAllProvider(const std::vector<std::shared_ptr<Config>>& configs);
         void initProviders(const std::vector<std::shared_ptr<Config>>& configs);
         bool initAPIModelProviders(const std::string& modelName, const std::shared_ptr<APIConfig>& apiConfig);
-        bool initOllamaModelProviders(const std::string& modelName, const std::shared_ptr<OllamaConfig>& config);
+        bool initOllamaModelProviders(const std::string& modelName, const std::shared_ptr<OllamaConfig>& ollamaconfig);
 
     private:
         bool _initialized = false;        

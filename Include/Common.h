@@ -14,6 +14,7 @@
 #include <sstream>
 #include <memory>
 #include <unordered_map>
+#include <unordered_set>
 #include <cstdlib>
 #include <functional>
 #include <jsoncpp/json/json.h>
@@ -27,10 +28,6 @@ enum Exception
 {
     OK = 0,
     INIT_EER ,
-    // AVAILABLE_ERR,
-    // SERIALIZE_ERR,
-    // POST_ERR,
-    // DESERIALIZE_ERR,
 };
 
 #endif
