@@ -15,7 +15,7 @@ namespace Cplusplus_LLM_Provider
         bool RegistrModule(std::string modelname, 
             std::shared_ptr<LLMProvider> provider);
         bool InitThisModule(std::string modelname,
-            std::unordered_map<std::string,std::string>& Config) ;
+            std::shared_ptr<Config> Config) ;
         std::vector<std::pair<std::string,ModelInfo>> GetAllAvailableModule();
         bool IsThisModelAvailable(std::string modelname);
         std::string SendMessageToThisModlue(

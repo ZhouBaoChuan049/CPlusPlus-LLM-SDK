@@ -35,6 +35,23 @@ namespace Cplusplus_LLM_Provider
              _APIAccessAddress(address)
         {}
     };
+    struct Config{
+        virtual ~Config() = default;
+        std::string _modelName;       
+        double _temperature = 0.7;    
+        int _maxTokens = 2048;       
+    };
+
+    struct APIConfig : public Config{
+        std::string _apiKey; 
+    };
+
+    struct OllamaConfig : public Config{
+        std::string _modelDesc;    
+        std::string _endpoint; 
+        //因为Ollama模型他可以部署在很多地方，所以这个endpoint必须有外部主动提供。    
+    };
+
     class Session
     {
     public:

@@ -15,26 +15,17 @@ namespace Cplusplus_LLM_Provider
         }
         return true ;
     }
-    void OllamaProvider::InitModel(std::unordered_map<std::string,std::string> Config)   
+    void OllamaProvider::InitModel(std::shared_ptr<Config> Config)   
     {
-        if(Config.find("ModelName") == Config.end())
+        auto ollamaConfig = std::dynamic_pointer_cast<OllamaConfig>(Config);
+        if(!ollamaConfig || ollamaConfig->_modelName.empty() || ollamaConfig->_endpoint.empty())
         {
-            LogModule::CRITICAL("InitModel Fail!{}","ModelName NoFind");
+            LogModule::CRITICAL("InitModel Fail!{}","Config 类型错误或 Ollama 配置缺失");
             exit(Exception::INIT_EER);
         }
-        else _ModelName = Config["ModelName"] ;
-        if(Config.find("ModelDesc") == Config.end())
-        {
-            LogModule::CRITICAL("InitModel Fail!{}","ModelDesc NoFind");
-            exit(Exception::INIT_EER);
-        }
-        else _ModelDesc = Config["ModelDesc"];
-        if(Config.find("APIAccessAddress") == Config.end())
-        {
-            LogModule::CRITICAL("InitModel Fail!{}","APIAccessAddress NoFind");
-            exit(Exception::INIT_EER);
-        }
-        else SetAPIAccessAddress(Config["APIAccessAddress"]);
+        _ModelName = ollamaConfig->_modelName;
+        _ModelDesc = ollamaConfig->_modelDesc;
+        SetAPIAccessAddress(ollamaConfig->_endpoint);
         SetAvailable(true);
     } 
     std::string OllamaProvider::GetModelName() { return _ModelName ;}

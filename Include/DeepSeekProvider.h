@@ -10,7 +10,7 @@ namespace Cplusplus_LLM_Provider
     public:
         DeepSeekProvider() = default;
         ~DeepSeekProvider() override = default;
-        void InitModel(std::unordered_map<std::string,std::string> Config)override;
+        void InitModel(std::shared_ptr<Config> Config)override;
         std::string GetModelName()override;
         ModelInfo GetModelDescription()override;
         std::string SendMessages(std::vector<Message>& messages,

@@ -13,10 +13,9 @@ TEST(DeepSeekProviderTest , SendMessageTest)
 
     ASSERT_FALSE(provider == nullptr);
     
-    std::unordered_map<std::string ,std::string> Config;
-    Config["model"] = "deepseek-flash";
-    Config["_ApiKey"] = getenv("deepseek_apikey") ;
-    Config["_APIAccessAddress"] = "https://api.deepseek.com" ;
+    auto Config = std::make_shared<APIConfig>();
+    Config->_modelName = "deepseek-flash";
+    Config->_apiKey = getenv("deepseek_apikey") ;
     provider->InitModel(Config);
 
     ASSERT_TRUE(provider->IsModelAvailable());

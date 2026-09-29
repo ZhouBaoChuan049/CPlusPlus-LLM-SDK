@@ -9,8 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_BUILD_TYPE Debug)
 
 add_executable(KimiProviderTest
-    KimiProviderTest
-    ../KimiProviderTest.cc
+    KimiProviderTest.cc
     ../../Src/KimiProvider.cc
     ../../Src/Util/LogModule.cc
 )

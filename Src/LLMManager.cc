@@ -25,10 +25,11 @@ namespace Cplusplus_LLM_Provider
     }
     bool LLMManager::InitThisModule(
         std::string modelname, 
-        std::unordered_map<std::string,std::string>& Config
+        std::shared_ptr<Config> Config
     ){
-        if(modelname == "deepseek-r1:1.5b")
-            SetModelInformation(modelname, Config["ModelDesc"]);
+        auto ollamaConfig = std::dynamic_pointer_cast<OllamaConfig>(Config);
+        if(ollamaConfig)
+            SetModelInformation(modelname, ollamaConfig->_modelDesc);
         if(ProviderCollections.find(modelname) == ProviderCollections.end())
         {
             LogModule::ERROR("模型未注册!不能初始化未注册的模型!");

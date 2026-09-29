@@ -20,11 +20,9 @@ TEST(KimiProviderTest, SendMessageTest)
 
     ASSERT_FALSE(provider == nullptr);
 
-    std::unordered_map<std::string, std::string> Config;
+    auto Config = std::make_shared<APIConfig>();
 
-    Config["_ApiKey"] = getenv("KIMI_API_KEY");
-
-    Config["_APIAccessAddress"] = "https://api.moonshot.cn";
+    Config->_apiKey = getenv("KIMI_API_KEY");
 
     provider->InitModel(Config);
 
@@ -70,11 +68,9 @@ TEST(KimiProviderTest, SendMessageStreamTest)
 
     ASSERT_FALSE(provider == nullptr);
 
-    std::unordered_map<std::string, std::string> Config;
+    auto Config = std::make_shared<APIConfig>();
 
-    Config["_ApiKey"] = getenv("KIMI_API_KEY");
-
-    Config["_APIAccessAddress"] = "https://api.moonshot.cn";
+    Config->_apiKey = getenv("KIMI_API_KEY");
 
     provider->InitModel(Config);
 

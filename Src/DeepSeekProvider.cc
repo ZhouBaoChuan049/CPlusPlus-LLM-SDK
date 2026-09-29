@@ -4,21 +4,16 @@
 #include "../Include/CommonStruct.h"
 namespace Cplusplus_LLM_Provider
 {
-    void DeepSeekProvider::InitModel(std::unordered_map<std::string,std::string> Config)
+    void DeepSeekProvider::InitModel(std::shared_ptr<Config> Config)
     {
-        //第一个存名称，第二个存内容
-        if(Config.find("_ApiKey") == Config.end())
+        auto apiConfig = std::dynamic_pointer_cast<APIConfig>(Config);
+        if(!apiConfig || apiConfig->_apiKey.empty())
         {
-            LogModule::CRITICAL("InitModel Fail!{}","_ApiKey NoFind");
+            LogModule::CRITICAL("InitModel Fail!{}","Config 类型错误或 _apiKey 缺失");
             exit(Exception::INIT_EER);
         }
-        else SetApiKey(Config["_ApiKey"]);
-        if(Config.find("_APIAccessAddress") == Config.end())
-        {
-            LogModule::CRITICAL("InitModel Fail!{}","_APIAccessAddress NoFind");
-            exit(Exception::INIT_EER);
-        }
-        else SetAPIAccessAddress(Config["_APIAccessAddress"]);
+        SetApiKey(apiConfig->_apiKey);
+        SetAPIAccessAddress("https://api.deepseek.com");
         SetAvailable(true);
     }
 

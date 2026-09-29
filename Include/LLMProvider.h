@@ -16,7 +16,7 @@ const std::string POS = "\n\n";
              _APIAccessAddress("")
         {}
         virtual ~LLMProvider() = default ;
-        virtual void InitModel(std::unordered_map<std::string,std::string> Config) = 0;
+        virtual void InitModel(std::shared_ptr<Config> Config) = 0;
         virtual bool IsModelAvailable() = 0;
         virtual std::string GetModelName() = 0;
         virtual ModelInfo GetModelDescription() = 0;

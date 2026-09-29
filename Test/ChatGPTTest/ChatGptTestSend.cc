@@ -16,11 +16,8 @@ TEST(ChatGptProviderTest , SendMessageTest)
 
     ASSERT_FALSE(provider == nullptr);
     
-    std::unordered_map<std::string ,std::string> Config;
-    Config["_ApiKey"] = getenv("chatgpt_apikey") ;
-    //https://leapone.leapinfra.cn
-    Config["_APIAccessAddress"] = "https://leapone.leapinfra.cn" ; //走中转站
-    //Config["_APIAccessAddress"] = "https://api.openai.com" ;
+    auto Config = std::make_shared<APIConfig>();
+    Config->_apiKey = getenv("chatgpt_apikey") ;
     provider->InitModel(Config);
 
     ASSERT_TRUE(provider->IsModelAvailable());
@@ -52,11 +49,8 @@ TEST(ChatGptProviderTest , SendMessageTest)
 
     ASSERT_FALSE(provider == nullptr);
     
-    std::unordered_map<std::string ,std::string> Config;
-    Config["_ApiKey"] = getenv("chatgpt_apikey") ;
-    //https://leapone.leapinfra.cn
-    Config["_APIAccessAddress"] = "https://leapone.leapinfra.cn" ; //走中转站
-    //Config["_APIAccessAddress"] = "https://api.openai.com" ;
+    auto Config = std::make_shared<APIConfig>();
+    Config->_apiKey = getenv("chatgpt_apikey") ;
     provider->InitModel(Config);
 
     ASSERT_TRUE(provider->IsModelAvailable());

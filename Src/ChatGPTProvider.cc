@@ -10,12 +10,16 @@ namespace Cplusplus_LLM_Provider
         return GetAvailable() ;
     }
     void ChatGPTProvider::InitModel
-        (std::unordered_map<std::string,std::string> Config)
+        (std::shared_ptr<Config> Config)
     {
-        if(Config.find("_ApiKey") != Config.end())
-            SetApiKey(Config["_ApiKey"]);
-        if(Config.find("_APIAccessAddress") != Config.end())
-            SetAPIAccessAddress(Config["_APIAccessAddress"]);
+        auto apiConfig = std::dynamic_pointer_cast<APIConfig>(Config);
+        if(!apiConfig)
+        {
+            LogModule::CRITICAL("InitModel Fail!{}","Config 类型错误，需要 APIConfig");
+            exit(Exception::INIT_EER);
+        }
+        SetApiKey(apiConfig->_apiKey);
+        SetAPIAccessAddress("https://leapone.leapinfra.cn");
         SetAvailable(true) ;
     }
     std::string ChatGPTProvider::GetModelName() 

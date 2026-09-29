@@ -43,23 +43,21 @@ TEST(TestLLMManager , TestFunctions)
         std::make_shared<OllamaProvider>()
     );
     
-    std::unordered_map<std::string ,std::string> ConfigForDeepseek;
-    ConfigForDeepseek["_ApiKey"] = getenv("deepseek_apikey") ;
-    ConfigForDeepseek["_APIAccessAddress"] = "https://api.deepseek.com" ;
+    auto ConfigForDeepseek = std::make_shared<APIConfig>();
+    ConfigForDeepseek->_apiKey = getenv("deepseek_apikey") ;
     manager.InitThisModule("deepseek-flash", ConfigForDeepseek);
 
-    std::unordered_map<std::string ,std::string> ConfigForGpt;
-    ConfigForGpt["_ApiKey"] = getenv("chatgpt_apikey") ;
-    ConfigForGpt["_APIAccessAddress"] = "https://leapone.leapinfra.cn" ; 
+    auto ConfigForGpt = std::make_shared<APIConfig>();
+    ConfigForGpt->_apiKey = getenv("chatgpt_apikey") ;
     manager.InitThisModule("gpt-5.5", ConfigForGpt);
     
-    std::unordered_map<std::string ,std::string> ConfigForOllama;
-    ConfigForOllama["ModelName"] = "deepseek-r1:1.5b" ;
-    ConfigForOllama["ModelDesc"] = "deepseek-r1:1.5b 是 DeepSeek-R1 \
+    auto ConfigForOllama = std::make_shared<OllamaConfig>();
+    ConfigForOllama->_modelName = "deepseek-r1:1.5b" ;
+    ConfigForOllama->_modelDesc = "deepseek-r1:1.5b 是 DeepSeek-R1 \
     系列中参数最小的蒸馏模型,基于 Qwen2.5-1.5B 微调而来。它保留了 \
     R1 的推理能力,体积仅约1.1GB,普通电脑就能流畅运行。在数学和编\
     程任务上表现不错,MIT 协议允许免费商用";
-    ConfigForOllama["APIAccessAddress"] = "127.0.0.1:11434" ;
+    ConfigForOllama->_endpoint = "127.0.0.1:11434" ;
     manager.InitThisModule("deepseek-r1:1.5b", ConfigForOllama);
     
     std::vector<std::pair<std::string,ModelInfo>> models = manager.GetAllAvailableModule();

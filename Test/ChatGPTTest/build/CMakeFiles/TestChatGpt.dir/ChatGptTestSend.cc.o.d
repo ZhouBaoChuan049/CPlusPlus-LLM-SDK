@@ -439,6 +439,7 @@ CMakeFiles/TestChatGpt.dir/ChatGptTestSend.cc.o: \
  /home/konata/Project/CPlusPlus_LLM_SDK/Test/ChatGPTTest/../../Include/CommonStruct.h \
  /home/konata/Project/CPlusPlus_LLM_SDK/Test/ChatGPTTest/../../Include/LLMProvider.h \
  /home/konata/Project/CPlusPlus_LLM_SDK/Test/ChatGPTTest/../../Include/LLMProvider.h \
+ /home/konata/Project/CPlusPlus_LLM_SDK/Test/ChatGPTTest/../../Include/CommonStruct.h \
  /usr/include/gtest/gtest.h /usr/include/gtest/gtest-assertion-result.h \
  /usr/include/gtest/gtest-message.h \
  /usr/include/gtest/internal/gtest-port.h \
