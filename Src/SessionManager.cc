@@ -39,11 +39,12 @@ namespace Cplusplus_LLM_Provider
     std::string SessionManager::CreatSession
         (const std::string& SessionName,const std::string ModelName)
     {
+        std::string SessionId = GenerateSessionId();
         _mutex.lock();
         Session session(SessionName) ;
         session._TimeCreate = std::time(nullptr);
         session._LastTime = std::time(nullptr);
-        session._SessionID = GenerateSessionId();
+        session._SessionID = SessionId;
         session._ModelNameUsed = ModelName ;
         //维护在内存里面
         _sessions[session._SessionID] = std::make_shared<Session>(session) ;
@@ -70,11 +71,9 @@ namespace Cplusplus_LLM_Provider
     bool SessionManager::AddMessage(const std::string SessionId , 
             const Message& message)
     {
-        _mutex.lock();
         std::shared_ptr<Session> TheSession = GetSession(SessionId);
         if(TheSession == nullptr)
         {
-            _mutex.unlock();
             LogModule::ERROR("对会话{}添加消息失败!",SessionId);
             return false ;
         }
@@ -82,22 +81,18 @@ namespace Cplusplus_LLM_Provider
         NewMessage._MessageID = GenerateMessageId(TheSession->_Messages.size());
         NewMessage._Time = std::time(nullptr);
         TheSession->_Messages.push_back(NewMessage);
-        _mutex.unlock();
 
         _dataManager.insertMessage(SessionId,NewMessage);
         return true ;
     }
     std::vector<Message> SessionManager::GetHistoryMessages(const std::string SessionId)
     {
-        _mutex.lock();
         std::shared_ptr<Session> TheSession = GetSession(SessionId);
         if(TheSession != nullptr)
         {
-            _mutex.unlock();
             LogModule::INFO("在内存中获取历史消息成功!");
             return TheSession->_Messages;
         }
-        _mutex.unlock();
         return _dataManager.getSessionMessages(SessionId);
     }
     void SessionManager::UpdateSessionTimesTamp(const std::string& SessionId)
@@ -106,13 +101,15 @@ namespace Cplusplus_LLM_Provider
         auto it = _sessions.find(SessionId);
         if(it != _sessions.end())
         {
-            _mutex.unlock();
             it->second->_LastTime = std::time(nullptr);
+            _mutex.unlock();
             LogModule::INFO("在内存中找到了会话信息");
         }
-        _mutex.unlock();
+        else
+        {
+            _mutex.unlock();
+        }
         _dataManager.updateSessionTimestamp(SessionId,std::time(nullptr));
-        _mutex.unlock();
     }
     std::vector<std::string> SessionManager::GetSessionLists() const
     {
@@ -143,16 +140,13 @@ namespace Cplusplus_LLM_Provider
     void SessionManager::ClearAllSessions()
     {
         _mutex.lock();
-        for(auto it : _sessions)
-        {
-            _sessions.erase(it.first);
-        }
+        _sessions.clear();
         _mutex.unlock();
         _dataManager.clearAllSessions();
     }
     size_t SessionManager::GetSessionCount() const
     {
-        std::lock_guard(_mutex);
+        std::lock_guard<std::mutex> lock(_mutex);
 
         if(_dataManager.getSessionCount() != _sessions.size())
         {

@@ -9,6 +9,9 @@ namespace Cplusplus_LLM_Provider
     class ChatSDK
     {
     public:
+        explicit ChatSDK(const std::string& dbname = "chat_sdk.db")
+            : _sessionManager(dbname)
+        {}
         bool initModels(const std::vector<std::shared_ptr<Config>>& configs);
         std::string createSession(const std::string SessionName, const std::string& modelName);
         std::shared_ptr<Session> getSession(const std::string& sessionId);

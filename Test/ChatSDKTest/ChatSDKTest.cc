@@ -10,28 +10,28 @@ TEST(ChatSDKTEST, SendMessges)
     std::shared_ptr<ChatSDK> chatsdk = std::make_shared<ChatSDK>();
     std::vector<std::shared_ptr<Config>> SDKConfigs ;
     //配置参数://////////////////
-    std::shared_ptr<APIConfig> DeepseekConfig ;
+    std::shared_ptr<APIConfig> DeepseekConfig = std::make_shared<APIConfig>();
     DeepseekConfig->_maxTokens = 4096;
     DeepseekConfig->_temperature = 1.0;
     DeepseekConfig->_modelName = "deepseek-flash";
     DeepseekConfig->_apiKey = getenv("deepseek_apikey") ;
     SDKConfigs.push_back(DeepseekConfig);
 
-    std::shared_ptr<APIConfig> GPTConfig ;
+    std::shared_ptr<APIConfig> GPTConfig = std::make_shared<APIConfig>();
     GPTConfig->_maxTokens = 4096;
     GPTConfig->_temperature = 1.0;
-    DeepseekConfig->_modelName = "gpt-5.5";
+    GPTConfig->_modelName = "gpt-5.5";
     GPTConfig->_apiKey = getenv("chatgpt_apikey") ;
     SDKConfigs.push_back(GPTConfig);
 
-    std::shared_ptr<APIConfig> KimiConfig ;
+    std::shared_ptr<APIConfig> KimiConfig = std::make_shared<APIConfig>();
     KimiConfig->_maxTokens = 4096;
     KimiConfig->_temperature = 1.0;
-    DeepseekConfig->_modelName = "kimi-k2.6";
+    KimiConfig->_modelName = "kimi-k2.6";
     KimiConfig->_apiKey = getenv("KIMI_API_KEY");
     SDKConfigs.push_back(KimiConfig);
 
-    std::shared_ptr<OllamaConfig> DeepseekR1Config ;
+    std::shared_ptr<OllamaConfig> DeepseekR1Config = std::make_shared<OllamaConfig>();
     DeepseekR1Config->_temperature = 1.0;
     DeepseekR1Config->_modelName = "deepseek-r1:1.5b";
     DeepseekR1Config->_modelDesc = "deepseek-r1:1.5b 是 DeepSeek-R1 \
@@ -50,7 +50,7 @@ TEST(ChatSDKTEST, SendMessges)
     std::string Resp = chatsdk->sendMessage(sessionid, "你好!请介绍你自己!");
     std::cout<<Resp<<std::endl;
 
-    std::string Resp = chatsdk->sendMessageStream(
+    std::string RespStream = chatsdk->sendMessageStream(
         sessionid, 
         "你好!请介绍你自己!",
         [](std::string response, bool check){
@@ -58,7 +58,7 @@ TEST(ChatSDKTEST, SendMessges)
                 return;
             LogModule::INFO("NewInfo:[{}]",response);
     });
-    std::cout<<Resp<<std::endl;
+    std::cout<<RespStream<<std::endl;
 }
 
 int main(int argc,char* argv[])

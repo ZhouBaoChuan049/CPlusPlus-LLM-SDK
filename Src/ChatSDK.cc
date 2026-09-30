@@ -102,7 +102,7 @@ namespace Cplusplus_LLM_Provider
             LogModule::ERROR("参数错误,模型配置参数为空或APIkey未填写");
             return false ;
         }
-        if(_llmManager.IsThisModelAvailable(modelName)){
+        if(_modelConfigs.find(modelName) != _modelConfigs.end()){
             LogModule::INFO("模型已就绪!不需要再次初始化.");
             return true ;
         }
@@ -125,7 +125,7 @@ namespace Cplusplus_LLM_Provider
             LogModule::ERROR("参数错误,模型配置参数为空");
             return false ;
         }
-        if(_llmManager.IsThisModelAvailable(modelName)){
+        if(_modelConfigs.find(modelName) != _modelConfigs.end()){
             LogModule::INFO("模型已就绪!不需要再次初始化.");
             return true ;
         }
@@ -198,6 +198,11 @@ namespace Cplusplus_LLM_Provider
         //我要告诉大模型的消息message
         std::shared_ptr<Session> Sessptr = 
             _sessionManager.GetSession(sessionId);
+        if(Sessptr == nullptr)
+        {
+            LogModule::ERROR("获取会话失败!");
+            return "" ;
+        }
         
         Message NewMessage_1("user",message);
         _sessionManager.AddMessage(sessionId, NewMessage_1);
@@ -207,13 +212,18 @@ namespace Cplusplus_LLM_Provider
             _sessionManager.GetHistoryMessages(sessionId);
         std::unordered_map<std::string,std::string> RequestPrograms ;
         auto it = _modelConfigs.find(SessModelName);//配置信息的智能指针
-        RequestPrograms["Max_token"] = it->second->_maxTokens;
-        RequestPrograms["temperature"] = it->second->_temperature;
+        if(it == _modelConfigs.end())
+        {
+            LogModule::ERROR("找不到模型{}的配置信息!",SessModelName);
+            return "" ;
+        }
+        RequestPrograms["Max_token"] = std::to_string(it->second->_maxTokens);
+        RequestPrograms["temperature"] = std::to_string(it->second->_temperature);
         //特别判断:Ollama的一个专门配置参数
         auto _OllamaConfig = 
             std::dynamic_pointer_cast<OllamaConfig>(it->second);
         if(_OllamaConfig != nullptr)
-            RequestPrograms["Num_Ctx"] = _OllamaConfig->Num_Ctx;
+            RequestPrograms["Num_Ctx"] = std::to_string(_OllamaConfig->Num_Ctx);
         std::string AssistantResponse = _llmManager.SendMessageToThisModlue(
             SessModelName,
             HistoryMessages,
@@ -228,6 +238,11 @@ namespace Cplusplus_LLM_Provider
     {
         std::shared_ptr<Session> Sessptr = 
             _sessionManager.GetSession(sessionId);
+        if(Sessptr == nullptr)
+        {
+            LogModule::ERROR("获取会话失败!");
+            return "" ;
+        }
         
         Message NewMessage_1("user",message);
         _sessionManager.AddMessage(sessionId, NewMessage_1);
@@ -237,13 +252,18 @@ namespace Cplusplus_LLM_Provider
             _sessionManager.GetHistoryMessages(sessionId);
         std::unordered_map<std::string,std::string> RequestPrograms ;
         auto it = _modelConfigs.find(SessModelName);//配置信息的智能指针
-        RequestPrograms["Max_token"] = it->second->_maxTokens;
-        RequestPrograms["temperature"] = it->second->_temperature;
+        if(it == _modelConfigs.end())
+        {
+            LogModule::ERROR("找不到模型{}的配置信息!",SessModelName);
+            return "" ;
+        }
+        RequestPrograms["Max_token"] = std::to_string(it->second->_maxTokens);
+        RequestPrograms["temperature"] = std::to_string(it->second->_temperature);
         //特别判断:Ollama的一个专门配置参数
         auto _OllamaConfig = 
             std::dynamic_pointer_cast<OllamaConfig>(it->second);
         if(_OllamaConfig != nullptr)
-            RequestPrograms["Num_Ctx"] = _OllamaConfig->Num_Ctx;
+            RequestPrograms["Num_Ctx"] = std::to_string(_OllamaConfig->Num_Ctx);
         std::string AssistantResponse = _llmManager.SendMessageToThisModlueAsStream(
             SessModelName,
             HistoryMessages,
