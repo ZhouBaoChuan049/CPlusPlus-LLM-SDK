@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../../Include/ChatSDK.h"
+#include<ChatSDK.h>
 
 using namespace Cplusplus_LLM_Provider ;
 TEST(ChatSDKTEST, SendMessges)
