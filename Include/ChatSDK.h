@@ -10,11 +10,11 @@ namespace Cplusplus_LLM_Provider
     {
     public:
         bool initModels(const std::vector<std::shared_ptr<Config>>& configs);
-        std::string createSession(const std::string& modelName);
+        std::string createSession(const std::string SessionName, const std::string& modelName);
         std::shared_ptr<Session> getSession(const std::string& sessionId);
         std::vector<std::string> getSessionLists() const;
         bool deleteSession(const std::string& sessionId);
-        std::vector<ModelInfo> getAvailableModels() const;
+        std::vector<std::pair<std::string,ModelInfo>> getAvailableModels() ;
         std::string sendMessage(const std::string& sessionId, const std::string& message);
         std::string sendMessageStream(const std::string& sessionId, const std::string& message, 
                                             std::function<void(const std::string&, bool)> callback);   

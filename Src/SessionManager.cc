@@ -120,9 +120,7 @@ namespace Cplusplus_LLM_Provider
         _mutex.lock();
         std::vector<std::string> lists ;
         for(auto it : _sessions)
-        {
             lists.push_back(it.first);
-        }
         _mutex.unlock();
         return lists;
     }

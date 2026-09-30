@@ -138,33 +138,120 @@ namespace Cplusplus_LLM_Provider
         LogModule::INFO("模型{}初始化成功!",modelName);
         return true ;
     }
-    std::string ChatSDK::createSession(const std::string& modelName)
+    std::string ChatSDK::createSession(const std::string SessionName, const std::string& modelName)
     {
-        
+        if(_initialized == false)
+        {
+            LogModule::ERROR("错误!模型未初始化.");
+            return "" ;
+        }
+        std::string sessionid = _sessionManager.CreatSession(SessionName, modelName);
+        return sessionid ;//这里应该不会出问题
     }
     std::shared_ptr<Session> ChatSDK::getSession(const std::string& sessionId)
     {
-
+        if(_initialized == false)
+        {
+            LogModule::ERROR("错误!模型未初始化.");
+            return nullptr ;
+        }
+        std::shared_ptr<Session> sessionptr = _sessionManager.GetSession(sessionId);
+        if(sessionptr == nullptr)
+        {
+            LogModule::ERROR("获取会话失败!");
+            return nullptr ;
+        }
+        return sessionptr ;
     }
     std::vector<std::string> ChatSDK::getSessionLists() const
     {
-
+        if(_initialized == false)
+        {
+            LogModule::ERROR("错误!模型未初始化.");
+            return {} ;
+        }
+        return _sessionManager.GetSessionLists();
     }
     bool ChatSDK::deleteSession(const std::string& sessionId)
     {
-
+        if(_initialized == false)
+        {
+            LogModule::ERROR("错误!模型未初始化.");
+            return false;
+        }
+        if(_sessionManager.DeleteSession(sessionId) == false)
+        {
+            LogModule::ERROR("删除会话{}失败!",sessionId);
+            return false ;
+        }
+        LogModule::INFO("删除会话{}成功!",sessionId);
+        return true ;
     }
-    std::vector<ModelInfo> ChatSDK::getAvailableModels() const
+    std::vector<std::pair<std::string,ModelInfo>> ChatSDK::getAvailableModels()
     {
-
+        std::vector<std::pair<std::string,ModelInfo>> ret = 
+            _llmManager.GetAllAvailableModule();
+        return ret;
     }
     std::string ChatSDK::sendMessage(const std::string& sessionId, const std::string& message)
     {
-
+        //我要告诉大模型的消息message
+        std::shared_ptr<Session> Sessptr = 
+            _sessionManager.GetSession(sessionId);
+        
+        Message NewMessage_1("user",message);
+        _sessionManager.AddMessage(sessionId, NewMessage_1);
+        
+        std::string SessModelName = Sessptr->_ModelNameUsed;
+        std::vector<Message> HistoryMessages = 
+            _sessionManager.GetHistoryMessages(sessionId);
+        std::unordered_map<std::string,std::string> RequestPrograms ;
+        auto it = _modelConfigs.find(SessModelName);//配置信息的智能指针
+        RequestPrograms["Max_token"] = it->second->_maxTokens;
+        RequestPrograms["temperature"] = it->second->_temperature;
+        //特别判断:Ollama的一个专门配置参数
+        auto _OllamaConfig = 
+            std::dynamic_pointer_cast<OllamaConfig>(it->second);
+        if(_OllamaConfig != nullptr)
+            RequestPrograms["Num_Ctx"] = _OllamaConfig->Num_Ctx;
+        std::string AssistantResponse = _llmManager.SendMessageToThisModlue(
+            SessModelName,
+            HistoryMessages,
+            RequestPrograms
+        );
+        Message NewMessage_2("assistant",AssistantResponse);
+        _sessionManager.AddMessage(sessionId, NewMessage_2);
+        return AssistantResponse ;
     }
     std::string ChatSDK::sendMessageStream(const std::string& sessionId, const std::string& message, 
         std::function<void(const std::string&, bool)> callback)
     {
+        std::shared_ptr<Session> Sessptr = 
+            _sessionManager.GetSession(sessionId);
         
+        Message NewMessage_1("user",message);
+        _sessionManager.AddMessage(sessionId, NewMessage_1);
+        
+        std::string SessModelName = Sessptr->_ModelNameUsed;
+        std::vector<Message> HistoryMessages = 
+            _sessionManager.GetHistoryMessages(sessionId);
+        std::unordered_map<std::string,std::string> RequestPrograms ;
+        auto it = _modelConfigs.find(SessModelName);//配置信息的智能指针
+        RequestPrograms["Max_token"] = it->second->_maxTokens;
+        RequestPrograms["temperature"] = it->second->_temperature;
+        //特别判断:Ollama的一个专门配置参数
+        auto _OllamaConfig = 
+            std::dynamic_pointer_cast<OllamaConfig>(it->second);
+        if(_OllamaConfig != nullptr)
+            RequestPrograms["Num_Ctx"] = _OllamaConfig->Num_Ctx;
+        std::string AssistantResponse = _llmManager.SendMessageToThisModlueAsStream(
+            SessModelName,
+            HistoryMessages,
+            RequestPrograms,
+            callback
+        );
+        Message NewMessage_2("assistant",AssistantResponse);
+        _sessionManager.AddMessage(sessionId, NewMessage_2);
+        return AssistantResponse ;
     }
 }

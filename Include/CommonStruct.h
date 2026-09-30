@@ -49,6 +49,7 @@ namespace Cplusplus_LLM_Provider
     struct OllamaConfig : public Config{
         std::string _modelDesc;    
         std::string _endpoint; 
+        int Num_Ctx;
         //因为Ollama模型他可以部署在很多地方，所以这个endpoint必须有外部主动提供。    
     };
 
