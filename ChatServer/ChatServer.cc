@@ -7,6 +7,8 @@ namespace  ChatServerModule
 {
     ChatServer::ChatServer(const ServerConfig configs)
     {
+        _configs = configs;
+
         _chatSDK = std::make_shared<Cplusplus_LLM_Provider::ChatSDK>();
 
         auto deepseekConfig = std::make_shared<Cplusplus_LLM_Provider::APIConfig>();
@@ -51,6 +53,12 @@ namespace  ChatServerModule
             return;
         }
     }
+    ChatServer::~ChatServer()
+    {
+        if(_chatServer){
+            _chatServer->stop();
+        }
+    }
     bool ChatServer::Start()
     {
         if(_isRunning.load()){
@@ -90,7 +98,7 @@ namespace  ChatServerModule
         return _isRunning ;
     }
 
-    std::string ChatServer::buildResponse(const std::string& message, bool success = false)
+    std::string ChatServer::buildResponse(const std::string& message, bool success)
     {
         Json::Value responseJson;
         responseJson["success"] = success;
@@ -340,27 +348,22 @@ namespace  ChatServerModule
                 std::string sseData = "data: " + Json::valueToQuotedString(chunk.c_str()) + "\n\n";
 
                 // 需要将模型返回的结果 chunk 发送给客户单
-                dataSink.write(sseData.c_str(), sseData.size());  // 将数据写入响应流，即立即发送给客户单，该方法不会等待缓冲区满之后发送
+                dataSink.write(sseData.c_str(), sseData.size());  
+                // 将数据写入响应流，即立即发送给客户单，该方法不会等待缓冲区满之后发送
 
-                // 处理结束标记
                 if(last){
-                    // 流向响应结束
                     std::string doneData = "data: [DONE]\n\n";
                     dataSink.write(doneData.c_str(), doneData.size());
-                    dataSink.done();    // 表示流式响应结束
-                    return false;       // 不再有后续数据
+                    dataSink.done();    
+                    return false;      
                 }
                 return true;
             };
-            
-            // 先给客户端发送一个空的数据块，避免客户端长时间的等待
             if (!writeChunk("", false)) {
                 return false;
             }
-            
-            // 发送消息流
             _chatSDK->sendMessageStream(sessionId, message, writeChunk);
-            return false;   // 不再有后续数据
+            return false; 
         });
     }
 
