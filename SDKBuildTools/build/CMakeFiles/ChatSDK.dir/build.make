@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/konata/Project/CPlusPlus_LLM_SDK/BuildTools
+CMAKE_SOURCE_DIR = /home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/build
+CMAKE_BINARY_DIR = /home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ChatSDK.dir/depend.make
@@ -69,164 +69,180 @@ include CMakeFiles/ChatSDK.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/ChatSDK.dir/flags.make
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.o: CMakeFiles/ChatSDK.dir/flags.make
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.o: /home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.o: CMakeFiles/ChatSDK.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.o -MF CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.o.d -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.o -c /home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.o: CMakeFiles/ChatSDK.dir/flags.make
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.o: /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.o: CMakeFiles/ChatSDK.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.o -MF CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.o.d -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.o -c /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc > CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.i
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc > CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.i
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.s
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.s
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.o: CMakeFiles/ChatSDK.dir/flags.make
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.o: /home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.o: CMakeFiles/ChatSDK.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.o -MF CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.o.d -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.o -c /home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.o: CMakeFiles/ChatSDK.dir/flags.make
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.o: /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.o: CMakeFiles/ChatSDK.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.o -MF CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.o.d -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.o -c /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc > CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.i
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc > CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.i
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.s
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.s
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.o: CMakeFiles/ChatSDK.dir/flags.make
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.o: /home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.o: CMakeFiles/ChatSDK.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.o -MF CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.o.d -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.o -c /home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.o: CMakeFiles/ChatSDK.dir/flags.make
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.o: /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.o: CMakeFiles/ChatSDK.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.o -MF CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.o.d -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.o -c /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc > CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.i
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc > CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.i
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.s
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.s
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.o: CMakeFiles/ChatSDK.dir/flags.make
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.o: /home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.o: CMakeFiles/ChatSDK.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.o -MF CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.o.d -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.o -c /home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.o: CMakeFiles/ChatSDK.dir/flags.make
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.o: /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.o: CMakeFiles/ChatSDK.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.o -MF CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.o.d -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.o -c /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc > CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.i
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc > CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.i
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.s
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.s
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.o: CMakeFiles/ChatSDK.dir/flags.make
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.o: /home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.o: CMakeFiles/ChatSDK.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.o -MF CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.o.d -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.o -c /home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.o: CMakeFiles/ChatSDK.dir/flags.make
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.o: /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.o: CMakeFiles/ChatSDK.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.o -MF CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.o.d -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.o -c /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc > CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.i
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc > CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.i
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.s
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.s
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.o: CMakeFiles/ChatSDK.dir/flags.make
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.o: /home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.o: CMakeFiles/ChatSDK.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.o -MF CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.o.d -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.o -c /home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.o: CMakeFiles/ChatSDK.dir/flags.make
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.o: /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.o: CMakeFiles/ChatSDK.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.o -MF CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.o.d -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.o -c /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc > CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.i
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc > CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.i
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.s
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.s
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.o: CMakeFiles/ChatSDK.dir/flags.make
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.o: /home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.o: CMakeFiles/ChatSDK.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.o -MF CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.o.d -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.o -c /home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.o: CMakeFiles/ChatSDK.dir/flags.make
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.o: /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.o: CMakeFiles/ChatSDK.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.o -MF CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.o.d -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.o -c /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc > CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.i
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc > CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.i
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.s
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.s
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.o: CMakeFiles/ChatSDK.dir/flags.make
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.o: /home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.o: CMakeFiles/ChatSDK.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.o -MF CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.o.d -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.o -c /home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.o: CMakeFiles/ChatSDK.dir/flags.make
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.o: /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.o: CMakeFiles/ChatSDK.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.o -MF CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.o.d -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.o -c /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc > CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.i
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc > CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.i
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.s
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.s
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.o: CMakeFiles/ChatSDK.dir/flags.make
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.o: /home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.o: CMakeFiles/ChatSDK.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.o -MF CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.o.d -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.o -c /home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.o: CMakeFiles/ChatSDK.dir/flags.make
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.o: /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.o: CMakeFiles/ChatSDK.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.o -MF CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.o.d -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.o -c /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc > CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.i
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc > CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.i
 
-CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.s
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.s
+
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.o: CMakeFiles/ChatSDK.dir/flags.make
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.o: /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.o: CMakeFiles/ChatSDK.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.o -MF CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.o.d -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.o -c /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc
+
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc > CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.i
+
+CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc -o CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.s
 
 # Object files for target ChatSDK
 ChatSDK_OBJECTS = \
-"CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.o" \
-"CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.o" \
-"CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.o" \
-"CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.o" \
-"CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.o" \
-"CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.o" \
-"CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.o" \
-"CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.o" \
-"CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.o"
+"CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.o" \
+"CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.o" \
+"CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.o" \
+"CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.o" \
+"CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.o" \
+"CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.o" \
+"CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.o" \
+"CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.o" \
+"CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.o" \
+"CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.o"
 
 # External object files for target ChatSDK
 ChatSDK_EXTERNAL_OBJECTS =
 
-/home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/libChatSDK.a: CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.o
-/home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/libChatSDK.a: CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.o
-/home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/libChatSDK.a: CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.o
-/home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/libChatSDK.a: CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.o
-/home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/libChatSDK.a: CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.o
-/home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/libChatSDK.a: CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.o
-/home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/libChatSDK.a: CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.o
-/home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/libChatSDK.a: CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.o
-/home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/libChatSDK.a: CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.o
-/home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/libChatSDK.a: CMakeFiles/ChatSDK.dir/build.make
-/home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/libChatSDK.a: CMakeFiles/ChatSDK.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX static library /home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/libChatSDK.a"
+/home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/libChatSDK.a: CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.o
+/home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/libChatSDK.a: CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.o
+/home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/libChatSDK.a: CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.o
+/home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/libChatSDK.a: CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.o
+/home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/libChatSDK.a: CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.o
+/home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/libChatSDK.a: CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.o
+/home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/libChatSDK.a: CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.o
+/home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/libChatSDK.a: CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.o
+/home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/libChatSDK.a: CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.o
+/home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/libChatSDK.a: CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.o
+/home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/libChatSDK.a: CMakeFiles/ChatSDK.dir/build.make
+/home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/libChatSDK.a: CMakeFiles/ChatSDK.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX static library /home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/libChatSDK.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/ChatSDK.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ChatSDK.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/ChatSDK.dir/build: /home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/libChatSDK.a
+CMakeFiles/ChatSDK.dir/build: /home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/libChatSDK.a
 .PHONY : CMakeFiles/ChatSDK.dir/build
 
 CMakeFiles/ChatSDK.dir/clean:
@@ -234,6 +250,6 @@ CMakeFiles/ChatSDK.dir/clean:
 .PHONY : CMakeFiles/ChatSDK.dir/clean
 
 CMakeFiles/ChatSDK.dir/depend:
-	cd /home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/konata/Project/CPlusPlus_LLM_SDK/BuildTools /home/konata/Project/CPlusPlus_LLM_SDK/BuildTools /home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/build /home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/build /home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/build/CMakeFiles/ChatSDK.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools /home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools /home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/build /home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/build /home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/build/CMakeFiles/ChatSDK.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/ChatSDK.dir/depend
 

@@ -1,0 +1,110 @@
+[20 : 34 : 37][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][76  ]打开数据库成功
+[20 : 34 : 37][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][27  ]创建Session表成功
+[20 : 34 : 37][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][46  ]创建Message表成功
+[20 : 34 : 37][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][63  ]创建User表成功
+[20 : 34 : 37][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][76  ]打开数据库成功
+[20 : 34 : 37][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][27  ]创建Session表成功
+[20 : 34 : 37][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][46  ]创建Message表成功
+[20 : 34 : 37][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][63  ]创建User表成功
+[20 : 34 : 37][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc][16  ]从数据库加载用户数据0条成功!
+[20 : 34 : 37][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][55  ]模型未注册!
+[20 : 34 : 37][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][23  ]Model:deepseek-flashHave Been Registred
+[20 : 34 : 37][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][19  ]deepseek-flash模型注册成功
+[20 : 34 : 37][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][55  ]模型未注册!
+[20 : 34 : 37][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][23  ]Model:gpt-5.5Have Been Registred
+[20 : 34 : 37][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][25  ]gpt-5.5模型注册成功
+[20 : 34 : 37][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][55  ]模型未注册!
+[20 : 34 : 37][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][23  ]Model:kimi-k2.6Have Been Registred
+[20 : 34 : 37][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][31  ]kimi-k2.6模型注册成功
+[20 : 34 : 37][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][55  ]模型未注册!
+[20 : 34 : 37][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][23  ]Model:llama3Have Been Registred
+[20 : 34 : 37][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][47  ]llama3模型注册成功
+[20 : 34 : 37][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][75  ]对不起!你要求的模型我们暂时不支持,敬请期待!
+[20 : 34 : 37][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][75  ]对不起!你要求的模型我们暂时不支持,敬请期待!
+[20 : 34 : 37][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][75  ]对不起!你要求的模型我们暂时不支持,敬请期待!
+[20 : 34 : 37][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][88  ]对不起!你要求的模型我们暂时不支持,敬请期待!
+[20 : 34 : 37][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatServer/ChatServer.cc][59  ]ChatSDK初始化成功!
+[20 : 34 : 44][critical][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc][12  ]Ollama DeepSeek Model is not available!
+[20 : 34 : 49][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatServer/ChatServer.cc][83  ]服务器关闭成功!
+[20 : 35 : 06][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][76  ]打开数据库成功
+[20 : 35 : 06][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][27  ]创建Session表成功
+[20 : 35 : 06][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][46  ]创建Message表成功
+[20 : 35 : 06][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][63  ]创建User表成功
+[20 : 35 : 06][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][76  ]打开数据库成功
+[20 : 35 : 06][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][27  ]创建Session表成功
+[20 : 35 : 06][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][46  ]创建Message表成功
+[20 : 35 : 06][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][63  ]创建User表成功
+[20 : 35 : 06][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc][16  ]从数据库加载用户数据0条成功!
+[20 : 35 : 06][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][55  ]模型未注册!
+[20 : 35 : 06][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][23  ]Model:deepseek-flashHave Been Registred
+[20 : 35 : 06][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][19  ]deepseek-flash模型注册成功
+[20 : 35 : 06][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][55  ]模型未注册!
+[20 : 35 : 06][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][23  ]Model:gpt-5.5Have Been Registred
+[20 : 35 : 06][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][25  ]gpt-5.5模型注册成功
+[20 : 35 : 06][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][55  ]模型未注册!
+[20 : 35 : 06][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][23  ]Model:kimi-k2.6Have Been Registred
+[20 : 35 : 06][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][31  ]kimi-k2.6模型注册成功
+[20 : 35 : 06][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][55  ]模型未注册!
+[20 : 35 : 06][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][23  ]Model:llama3Have Been Registred
+[20 : 35 : 06][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][47  ]llama3模型注册成功
+[20 : 35 : 06][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][75  ]对不起!你要求的模型我们暂时不支持,敬请期待!
+[20 : 35 : 06][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][75  ]对不起!你要求的模型我们暂时不支持,敬请期待!
+[20 : 35 : 06][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][75  ]对不起!你要求的模型我们暂时不支持,敬请期待!
+[20 : 35 : 06][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][88  ]对不起!你要求的模型我们暂时不支持,敬请期待!
+[20 : 35 : 06][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatServer/ChatServer.cc][59  ]ChatSDK初始化成功!
+[20 : 35 : 12][critical][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc][12  ]Ollama DeepSeek Model is not available!
+[20 : 35 : 21][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatServer/ChatServer.cc][83  ]服务器关闭成功!
+[20 : 40 : 43][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][76  ]打开数据库成功
+[20 : 40 : 43][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][27  ]创建Session表成功
+[20 : 40 : 43][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][46  ]创建Message表成功
+[20 : 40 : 43][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][63  ]创建User表成功
+[20 : 40 : 43][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][76  ]打开数据库成功
+[20 : 40 : 43][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][27  ]创建Session表成功
+[20 : 40 : 43][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][46  ]创建Message表成功
+[20 : 40 : 43][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][63  ]创建User表成功
+[20 : 40 : 43][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc][16  ]从数据库加载用户数据0条成功!
+[20 : 40 : 43][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][56  ]模型未注册!
+[20 : 40 : 43][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][23  ]Model:deepseek-flashHave Been Registred
+[20 : 40 : 43][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][19  ]deepseek-flash模型注册成功
+[20 : 40 : 43][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][56  ]模型未注册!
+[20 : 40 : 43][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][23  ]Model:gpt-5.5Have Been Registred
+[20 : 40 : 43][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][25  ]gpt-5.5模型注册成功
+[20 : 40 : 43][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][56  ]模型未注册!
+[20 : 40 : 43][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][23  ]Model:kimi-k2.6Have Been Registred
+[20 : 40 : 43][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][31  ]kimi-k2.6模型注册成功
+[20 : 40 : 43][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][56  ]模型未注册!
+[20 : 40 : 43][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][23  ]Model:llama3Have Been Registred
+[20 : 40 : 43][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][47  ]llama3模型注册成功
+[20 : 40 : 43][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][75  ]对不起!你要求的模型我们暂时不支持,敬请期待!
+[20 : 40 : 43][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][75  ]对不起!你要求的模型我们暂时不支持,敬请期待!
+[20 : 40 : 43][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][75  ]对不起!你要求的模型我们暂时不支持,敬请期待!
+[20 : 40 : 43][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][88  ]对不起!你要求的模型我们暂时不支持,敬请期待!
+[20 : 40 : 43][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatServer/ChatServer.cc][59  ]ChatSDK初始化成功!
+[20 : 40 : 58][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatServer/ChatServer.cc][83  ]服务器关闭成功!
+[20 : 42 : 59][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][76  ]打开数据库成功
+[20 : 42 : 59][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][27  ]创建Session表成功
+[20 : 42 : 59][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][46  ]创建Message表成功
+[20 : 42 : 59][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][63  ]创建User表成功
+[20 : 42 : 59][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][76  ]打开数据库成功
+[20 : 42 : 59][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][27  ]创建Session表成功
+[20 : 42 : 59][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][46  ]创建Message表成功
+[20 : 42 : 59][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc][63  ]创建User表成功
+[20 : 42 : 59][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc][16  ]从数据库加载用户数据0条成功!
+[20 : 42 : 59][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][56  ]模型未注册!
+[20 : 42 : 59][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][23  ]Model:deepseek-flashHave Been Registred
+[20 : 42 : 59][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][19  ]deepseek-flash模型注册成功
+[20 : 42 : 59][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][56  ]模型未注册!
+[20 : 42 : 59][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][23  ]Model:gpt-5.5Have Been Registred
+[20 : 42 : 59][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][25  ]gpt-5.5模型注册成功
+[20 : 42 : 59][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][56  ]模型未注册!
+[20 : 42 : 59][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][23  ]Model:kimi-k2.6Have Been Registred
+[20 : 42 : 59][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][31  ]kimi-k2.6模型注册成功
+[20 : 42 : 59][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][56  ]模型未注册!
+[20 : 42 : 59][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][23  ]Model:deepseek-r1:1.5bHave Been Registred
+[20 : 42 : 59][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][47  ]deepseek-r1:1.5b模型注册成功
+[20 : 42 : 59][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][114 ]模型deepseek-flash初始化成功!
+[20 : 42 : 59][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][114 ]模型gpt-5.5初始化成功!
+[20 : 42 : 59][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][114 ]模型kimi-k2.6初始化成功!
+[20 : 42 : 59][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][137 ]模型deepseek-r1:1.5b初始化成功!
+[20 : 42 : 59][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatServer/ChatServer.cc][59  ]ChatSDK初始化成功!
+[20 : 43 : 14][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatServer/ChatServer.cc][83  ]服务器关闭成功!

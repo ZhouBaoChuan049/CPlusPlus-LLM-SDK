@@ -27,10 +27,10 @@ ${SUDO} mkdir -p "${INSTALL_ROOT}/lib" "${INSTALL_ROOT}/include" "${INSTALL_ROOT
 ${SUDO} cp -f "${SCRIPT_DIR}/libChatSDK.a" "${INSTALL_ROOT}/lib/"
 
 # 安装 Include 目录全部内容（含 Util 子目录）
-${SUDO} cp -rf "${PROJECT_DIR}/Include/." "${INSTALL_ROOT}/include/"
+${SUDO} cp -rf "${PROJECT_DIR}/ChatSDK/Include/." "${INSTALL_ROOT}/include/"
 
 # Common.h 相对引用了 ../Third_Party/Httplib/httplib.h，需保持相对路径可用
-${SUDO} cp -f "${PROJECT_DIR}/Third_Party/Httplib/httplib.h" "${INSTALL_ROOT}/Third_Party/Httplib/"
+${SUDO} cp -f "${PROJECT_DIR}/ChatSDK/Third_Party/Httplib/httplib.h" "${INSTALL_ROOT}/Third_Party/Httplib/"
 
 echo "==> 3/3 安装完成：${INSTALL_ROOT}"
 echo ""

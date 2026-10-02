@@ -12,6 +12,7 @@ namespace Cplusplus_LLM_Provider
             (
                 _SessionID TEXT PRIMARY KEY ,
                 _ModelNameUsed TEXT,
+                _UserName TEXT,
                 _TimeCreate INTEGER,
                 _LastTime INTEGER
             )
@@ -43,6 +44,23 @@ namespace Cplusplus_LLM_Provider
             return false ;
         }
         LogModule::INFO("创建Message表成功");
+
+        std::string CreateUserTableSQL = R"(
+            CREATE TABLE IF NOT EXISTS Users
+            (
+                _UserName TEXT PRIMARY KEY ,
+                _PasswordHash TEXT,
+                _Salt TEXT
+            )
+        )";
+        ret = sqlite3_exec(_db, CreateUserTableSQL.c_str(), nullptr, nullptr, nullptr);
+        if(ret !=SQLITE_OK)
+        {
+            _mutex.unlock();
+            LogModule::CRITICAL("创建User表失败,失败原因{}",sqlite3_errmsg(_db));
+            return false ;
+        }
+        LogModule::INFO("创建User表成功");
         _mutex.unlock();
         return true ;
     }
@@ -75,8 +93,8 @@ namespace Cplusplus_LLM_Provider
     {
         _mutex.lock();
         std::string InsertSQL = R"(
-            INSERT INTO Sessions (_SessionID,_ModelNameUsed,_TimeCreate,_LastTime)
-            VALUES(?,?,?,?);
+            INSERT INTO Sessions (_SessionID,_ModelNameUsed,_UserName,_TimeCreate,_LastTime)
+            VALUES(?,?,?,?,?);
         )";
         sqlite3_stmt* stmt ;
 
@@ -90,8 +108,9 @@ namespace Cplusplus_LLM_Provider
         }
         sqlite3_bind_text(stmt ,1,session._SessionID.c_str(),-1,SQLITE_TRANSIENT);
         sqlite3_bind_text(stmt ,2,session._ModelNameUsed.c_str(),-1,SQLITE_TRANSIENT);
-        sqlite3_bind_int(stmt ,3,session._TimeCreate);
-        sqlite3_bind_int(stmt ,4,session._LastTime);
+        sqlite3_bind_text(stmt ,3,session._UserName.c_str(),-1,SQLITE_TRANSIENT);
+        sqlite3_bind_int(stmt ,4,session._TimeCreate);
+        sqlite3_bind_int(stmt ,5,session._LastTime);
 
         ret = sqlite3_step(stmt);
         if(ret != SQLITE_DONE)
@@ -110,7 +129,7 @@ namespace Cplusplus_LLM_Provider
     {
         _mutex.lock();
         std::string GetSQL = R"( 
-            SELECT _ModelNameUsed, _TimeCreate, _LastTime FROM Sessions WHERE _SessionID=?;
+            SELECT _UserName, _ModelNameUsed, _TimeCreate, _LastTime FROM Sessions WHERE _SessionID=?;
         )";
         sqlite3_stmt*stmt ;
         int ret = sqlite3_prepare(_db,GetSQL.c_str(),-1,&stmt,nullptr);
@@ -130,11 +149,13 @@ namespace Cplusplus_LLM_Provider
             _mutex.unlock();
             return nullptr ;
         }
-        std::string ModelName = 
+        std::string UserName = 
             reinterpret_cast<const char*>(sqlite3_column_text(stmt,0));
-        time_t TimeCreate = sqlite3_column_int(stmt,1);
-        time_t LastTime = sqlite3_column_int(stmt,2);
-        Session session(ModelName);
+        std::string ModelName = 
+            reinterpret_cast<const char*>(sqlite3_column_text(stmt,1));
+        time_t TimeCreate = sqlite3_column_int(stmt,2);
+        time_t LastTime = sqlite3_column_int(stmt,3);
+        Session session(ModelName, UserName);
         session._LastTime = LastTime;
         session._TimeCreate = TimeCreate;
         session._SessionID = sessionId;
@@ -231,7 +252,7 @@ namespace Cplusplus_LLM_Provider
     {
         _mutex.lock();
         std::string selectALLSQL = R"(
-            SELECT _SessionID, _ModelNameUsed, _TimeCreate, _LastTime FROM Sessions ORDER BY _LastTime DESC ;
+            SELECT _SessionID, _UserName, _ModelNameUsed, _TimeCreate, _LastTime FROM Sessions ORDER BY _LastTime DESC ;
         )";
         sqlite3_stmt*stmt ;
         int ret = sqlite3_prepare(_db,selectALLSQL.c_str(),-1,&stmt,nullptr);
@@ -247,12 +268,50 @@ namespace Cplusplus_LLM_Provider
         {
             std::string id = 
                 reinterpret_cast<const char*>(sqlite3_column_text(stmt,0));
+            std::string userName = 
+                reinterpret_cast<const char*>(sqlite3_column_text(stmt,1));
+            std::string modelname = 
+                reinterpret_cast<const char*>(sqlite3_column_text(stmt,2));
+            time_t TimeCreate = sqlite3_column_int(stmt,3);
+            time_t LastTime = sqlite3_column_int(stmt,4);
+
+            std::shared_ptr<Session> _session = std::make_shared<Session>(modelname, userName);
+            _session->_SessionID = id ;
+            _session->_TimeCreate = TimeCreate;
+            _session->_LastTime = LastTime;
+            Sessionscollections.push_back(_session);
+        }
+        sqlite3_finalize(stmt);
+        _mutex.unlock();
+        return Sessionscollections;
+    }
+    std::vector<std::shared_ptr<Session>> DataManager::getSessionsByUser(const std::string& username)const
+    {
+        _mutex.lock();
+        std::string selectSQL = R"(
+            SELECT _SessionID, _ModelNameUsed, _TimeCreate, _LastTime FROM Sessions WHERE _UserName=? ORDER BY _LastTime DESC ;
+        )";
+        sqlite3_stmt*stmt ;
+        int ret = sqlite3_prepare(_db,selectSQL.c_str(),-1,&stmt,nullptr);
+        if(ret != SQLITE_OK)
+        {
+            LogModule::ERROR("selectSQL准备失败,失败原因{}",sqlite3_errmsg(_db));
+            sqlite3_finalize(stmt);
+            _mutex.unlock();
+            return {} ;
+        }
+        sqlite3_bind_text(stmt,1,username.c_str(),-1,SQLITE_TRANSIENT);
+        std::vector<std::shared_ptr<Session>> Sessionscollections ;
+        while(sqlite3_step(stmt) == SQLITE_ROW)
+        {
+            std::string id = 
+                reinterpret_cast<const char*>(sqlite3_column_text(stmt,0));
             std::string modelname = 
                 reinterpret_cast<const char*>(sqlite3_column_text(stmt,1));
             time_t TimeCreate = sqlite3_column_int(stmt,2);
             time_t LastTime = sqlite3_column_int(stmt,3);
 
-            std::shared_ptr<Session> _session = std::make_shared<Session>(modelname);
+            std::shared_ptr<Session> _session = std::make_shared<Session>(modelname, username);
             _session->_SessionID = id ;
             _session->_TimeCreate = TimeCreate;
             _session->_LastTime = LastTime;
@@ -420,5 +479,101 @@ namespace Cplusplus_LLM_Provider
         LogModule::INFO("DelSQL执行成功!");
         _mutex.unlock();
         return true ;
+    }
+    /////////////////////////////////////////////////////////////////////////////////////
+    bool DataManager::insertUser(const std::string& username, const std::string& passwordHash, const std::string& salt)
+    {
+        _mutex.lock();
+        std::string InsertSQL = R"(
+            INSERT INTO Users (_UserName,_PasswordHash,_Salt)
+            VALUES(?,?,?);
+        )";
+        sqlite3_stmt* stmt ;
+        int ret = sqlite3_prepare(_db,InsertSQL.c_str(),-1,&stmt,nullptr);
+        if(ret != SQLITE_OK)
+        {
+            LogModule::ERROR("InsertUserSQL准备失败,失败原因{}",sqlite3_errmsg(_db));
+            sqlite3_finalize(stmt);
+            _mutex.unlock();
+            return false ;
+        }
+        sqlite3_bind_text(stmt ,1,username.c_str(),-1,SQLITE_TRANSIENT);
+        sqlite3_bind_text(stmt ,2,passwordHash.c_str(),-1,SQLITE_TRANSIENT);
+        sqlite3_bind_text(stmt ,3,salt.c_str(),-1,SQLITE_TRANSIENT);
+        ret = sqlite3_step(stmt);
+        if(ret != SQLITE_DONE)
+        {
+            LogModule::ERROR("InsertUserSQL执行失败,失败原因{}",sqlite3_errmsg(_db));
+            sqlite3_finalize(stmt);
+            _mutex.unlock();
+            return false ;
+        }
+        LogModule::INFO("插入用户{}成功!", username);
+        sqlite3_finalize(stmt);
+        _mutex.unlock();
+        return true;
+    }
+    std::shared_ptr<User> DataManager::getUser(const std::string& username)const
+    {
+        _mutex.lock();
+        std::string GetSQL = R"( 
+            SELECT _UserName,_PasswordHash,_Salt FROM Users WHERE _UserName=?;
+        )";
+        sqlite3_stmt* stmt ;
+        int ret = sqlite3_prepare(_db,GetSQL.c_str(),-1,&stmt,nullptr);
+        if(ret != SQLITE_OK)
+        {
+            LogModule::ERROR("GetUserSQL准备失败,失败原因{}",sqlite3_errmsg(_db));
+            sqlite3_finalize(stmt);
+            _mutex.unlock();
+            return nullptr ;
+        }
+        sqlite3_bind_text(stmt,1,username.c_str(),-1,SQLITE_TRANSIENT);
+        ret = sqlite3_step(stmt);
+        if(ret != SQLITE_ROW)
+        {
+            sqlite3_finalize(stmt);
+            _mutex.unlock();
+            return nullptr ;
+        }
+        std::string name = 
+            reinterpret_cast<const char*>(sqlite3_column_text(stmt,0));
+        std::string passwordHash = 
+            reinterpret_cast<const char*>(sqlite3_column_text(stmt,1));
+        std::string salt = 
+            reinterpret_cast<const char*>(sqlite3_column_text(stmt,2));
+        sqlite3_finalize(stmt);
+        _mutex.unlock();
+        return std::make_shared<User>(name,passwordHash,salt);
+    }
+    std::vector<std::shared_ptr<User>> DataManager::getAllUsers()const
+    {
+        _mutex.lock();
+        std::string selectALLSQL = R"(
+            SELECT _UserName,_PasswordHash,_Salt FROM Users ;
+        )";
+        sqlite3_stmt* stmt ;
+        int ret = sqlite3_prepare(_db,selectALLSQL.c_str(),-1,&stmt,nullptr);
+        if(ret != SQLITE_OK)
+        {
+            LogModule::ERROR("getAllUsersSQL准备失败,失败原因{}",sqlite3_errmsg(_db));
+            sqlite3_finalize(stmt);
+            _mutex.unlock();
+            return {} ;
+        }
+        std::vector<std::shared_ptr<User>> userCollection ;
+        while(sqlite3_step(stmt) == SQLITE_ROW)
+        {
+            std::string username = 
+                reinterpret_cast<const char*>(sqlite3_column_text(stmt,0));
+            std::string passwordHash = 
+                reinterpret_cast<const char*>(sqlite3_column_text(stmt,1));
+            std::string salt = 
+                reinterpret_cast<const char*>(sqlite3_column_text(stmt,2));
+            userCollection.push_back(std::make_shared<User>(username,passwordHash,salt));
+        }
+        sqlite3_finalize(stmt);
+        _mutex.unlock();
+        return userCollection;
     }
 }

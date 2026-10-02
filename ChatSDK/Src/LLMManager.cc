@@ -41,10 +41,11 @@ namespace Cplusplus_LLM_Provider
     std::vector<std::pair<std::string,ModelInfo>> LLMManager::GetAllAvailableModule()
     {
         std::vector<std::pair<std::string,ModelInfo>> ModelColl ;
-        for(auto model : ProviderInfo)
+        for(const auto& item : ProviderCollections)
         {
-            if(IsThisModelAvailable(model.first))
-                ModelColl.push_back(make_pair(model.first,model.second));
+            ModelInfo info = item.second->GetModelDescription();
+            if(info._IsThisModelAvailable)
+                ModelColl.push_back(make_pair(item.first, info));
         }
         return ModelColl ;
     }

@@ -7,13 +7,7 @@ namespace Cplusplus_LLM_Provider
 {
     bool OllamaProvider::IsModelAvailable()   
     {
-        if(!GetAvailable())
-        {
-            LogModule::CRITICAL("Ollama DeepSeek Model is not available!");
-            std::string Excepts("Ollama DeepSeek Model is not available");
-            throw Excepts;
-        }
-        return true ;
+        return GetAvailable() ;
     }
     void OllamaProvider::InitModel(std::shared_ptr<Config> Config)   
     {

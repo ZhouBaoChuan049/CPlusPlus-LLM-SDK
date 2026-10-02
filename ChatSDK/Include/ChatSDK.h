@@ -4,16 +4,18 @@
 #include "CommonStruct.h"
 #include "SessionManager.h"
 #include "LLMManager.h"
+#include "UserManager.h"
 namespace Cplusplus_LLM_Provider
 {
     class ChatSDK
     {
     public:
         explicit ChatSDK(const std::string& dbname = "chat_sdk.db")
-            : _sessionManager(dbname)
+            : _sessionManager(dbname),
+              _userManager(dbname)
         {}
         bool initModels(const std::vector<std::shared_ptr<Config>>& configs);
-        std::string createSession(const std::string SessionName, const std::string& modelName);
+        std::string createSession(const std::string SessionName, const std::string& modelName, const std::string userName = "");
         std::shared_ptr<Session> getSession(const std::string& sessionId);
         std::vector<std::string> getSessionLists() const;
         bool deleteSession(const std::string& sessionId);
@@ -33,6 +35,7 @@ namespace Cplusplus_LLM_Provider
         LLMManager _llmManager;           
     public:
         SessionManager _sessionManager;  
+        UserManager _userManager;  
     
     };
 }

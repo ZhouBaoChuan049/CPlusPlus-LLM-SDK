@@ -11,21 +11,22 @@ endif()
 
 # SDK 源文件
 set(SDK_SOURCES
-    ../Src/ChatSDK.cc
-    ../Src/SessionManager.cc
-    ../Src/DataManager.cc
-    ../Src/LLMManager.cc
-    ../Src/DeepSeekProvider.cc
-    ../Src/ChatGPTProvider.cc
-    ../Src/KimiProvider.cc
-    ../Src/OllamaProvider.cc
-    ../Src/Util/LogModule.cc
+    ../ChatSDK/Src/ChatSDK.cc
+    ../ChatSDK/Src/SessionManager.cc
+    ../ChatSDK/Src/DataManager.cc
+    ../ChatSDK/Src/UserManager.cc
+    ../ChatSDK/Src/LLMManager.cc
+    ../ChatSDK/Src/DeepSeekProvider.cc
+    ../ChatSDK/Src/ChatGPTProvider.cc
+    ../ChatSDK/Src/KimiProvider.cc
+    ../ChatSDK/Src/OllamaProvider.cc
+    ../ChatSDK/Src/Util/LogModule.cc
 )
 
 add_library(ChatSDK STATIC ${SDK_SOURCES})
 
 target_include_directories(ChatSDK PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/../Include
+    ${CMAKE_CURRENT_SOURCE_DIR}/../ChatSDK/Include
 )
 
 # httplib 需要启用 OpenSSL 支持

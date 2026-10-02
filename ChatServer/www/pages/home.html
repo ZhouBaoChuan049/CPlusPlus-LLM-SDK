@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EchoMind AI</title>
+    <link rel="icon" href="/images/logo.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <nav class="navbar">
+        <div class="nav-left">
+            <img class="logo" src="/images/logo.jpg" alt="EchoMind Logo">
+            <span class="brand">EchoMind AI</span>
+        </div>
+        <div class="nav-right">
+            <a class="nav-link" href="/pages/author.html">作者</a>
+            <a class="nav-link" href="https://github.com/ZhouBaoChuan049/CPlusPlus_LLM_SDK" target="_blank" rel="noopener">源码</a>
+        </div>
+    </nav>
+
+    <main class="hero">
+        <h1 class="title">Welcome To EchoMind</h1>
+
+        <p class="typewriter">
+            <span id="typewriter-text"></span><span class="caret"></span>
+        </p>
+
+        <div class="input-card">
+            <textarea id="question" rows="3" placeholder="你在此端发问，我在彼端回答。"></textarea>
+            <button id="send-btn" class="send-btn" type="button" aria-label="发送" title="发送">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+
+        <button id="start-btn" class="start-btn" type="button">开始体验</button>
+    </main>
+
+    <script src="/js/home.js"></script>
+</body>
+</html>

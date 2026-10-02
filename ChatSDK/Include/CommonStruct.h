@@ -58,11 +58,26 @@ namespace Cplusplus_LLM_Provider
     public:
         std::string _SessionID ;
         std::string _ModelNameUsed ;
+        std::string _UserName ;       //该会话的归属用户,空串表示未归属
         std::vector<Message> _Messages;
         std::time_t _TimeCreate ;
         std::time_t _LastTime ;
-        Session(std::string name)
-            :_ModelNameUsed(name)
+        Session(std::string name, const std::string& userName = "")
+            :_ModelNameUsed(name),
+             _UserName(userName)
+        {}
+    };
+    class User
+    {
+    public:
+        std::string _UserName ;
+        std::string _PasswordHash ;   //密码哈希
+        std::string _Salt ;           //密码哈希所用的盐
+        std::vector<Session> _Sessions;  //该用户历史创建的会话
+        User(const std::string& username = "", const std::string& passwordHash = "", const std::string& salt = "")
+            :_UserName(username),
+             _PasswordHash(passwordHash),
+             _Salt(salt)
         {}
     };
 }

@@ -36,14 +36,7 @@ namespace Cplusplus_LLM_Provider
     }
     bool DeepSeekProvider::IsModelAvailable()
     {
-        if(!GetAvailable())
-        {
-            LogModule::CRITICAL("DeepSeek Model is not available!");
-            std::string Excepts("DeepSeek Model is not available");
-            throw Excepts;
-            //exit(AVAILABLE_ERR);
-        }
-        return true ;
+        return GetAvailable() ;
     }
     std::string DeepSeekProvider::Serialize(std::vector<Message>& messages,
              std::unordered_map<std::string,std::string>& RequestPrograms, bool isstream)

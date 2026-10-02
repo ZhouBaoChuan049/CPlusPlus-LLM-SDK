@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DCPPHTTPLIB_OPENSSL_SUPPORT
 
-CXX_INCLUDES = -I/home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/../Include
+CXX_INCLUDES = -I/home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/../ChatSDK/Include
 
 CXX_FLAGS = -O3 -DNDEBUG -std=gnu++17
 

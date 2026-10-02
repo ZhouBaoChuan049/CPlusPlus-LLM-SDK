@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册 / 登录 - EchoMind AI</title>
+    <link rel="icon" href="/images/logo.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+<body>
+    <div class="register-wrap">
+        <!-- 左侧品牌展示区 -->
+        <section class="brand-side">
+            <div class="brand-top">
+                <img class="logo" src="/images/logo.jpg" alt="EchoMind Logo">
+                <span class="brand-name">EchoMind AI</span>
+            </div>
+
+            <div class="brand-card">
+                <span class="badge"><span class="star">✦</span> ECHOMIND CONVERSATION</span>
+                <h1 class="welcome-title">Welcome</h1>
+                <div class="slogan">
+                    <div class="slogan-bar"></div>
+                    <div class="slogan-text">
+                        <p class="slogan-en">Light spills from this end; echoes drift from that end.</p>
+                        <p class="slogan-zh">你在此端发问，我在彼端回答。</p>
+                    </div>
+                </div>
+                <div class="brand-footnote">ASK FROM THIS END&nbsp;&nbsp;&nbsp;ANSWER FROM THAT END</div>
+            </div>
+        </section>
+
+        <!-- 右侧表单交互区 -->
+        <section class="form-side">
+            <div class="form-card">
+                <h2 class="form-title">欢迎回来！</h2>
+                <p class="form-subtitle">请填写您的详细信息以体验 EchoMind AI</p>
+
+                <div class="field">
+                    <label for="username">你的名字</label>
+                    <input type="text" id="username" placeholder="请输入你的名字" autocomplete="username">
+                </div>
+
+                <div class="field">
+                    <label for="password">密码</label>
+                    <input type="password" id="password" placeholder="请输入密码" autocomplete="current-password">
+                </div>
+
+                <p class="error-msg" id="error-msg"></p>
+
+                <button class="submit-btn" id="submit-btn" type="button">登录/注册</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="/js/register.js"></script>
+</body>
+</html>

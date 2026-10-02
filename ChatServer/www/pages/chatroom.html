@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EchoMind - 对话</title>
+    <link rel="icon" href="/images/logo.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="/css/chat.css">
+    <!-- 代码高亮主题（可选，加载失败时代码块仅无高亮，不影响使用） -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github-dark.min.css">
+</head>
+<body>
+    <div class="app">
+        <!-- 左侧侧边栏 -->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <img class="logo" src="/images/logo.jpg" alt="EchoMind Logo">
+                <span class="brand">EchoMind</span>
+            </div>
+
+            <button class="new-chat" id="new-chat-btn" type="button">
+                <span class="plus">＋</span><span class="new-chat-text">新建对话</span>
+            </button>
+
+            <nav class="session-list" id="session-list" aria-label="历史会话"></nav>
+
+            <div class="sidebar-bottom">
+                <span class="user-name" id="user-name">访客</span>
+            </div>
+        </aside>
+
+        <!-- 右侧主对话区 -->
+        <main class="main">
+            <!-- 初始欢迎态 -->
+            <section class="welcome" id="welcome">
+                <h1 class="welcome-title">你好，<span id="welcome-name">访客</span>，准备好开始了吗？</h1>
+            </section>
+
+            <!-- 消息流对话态 -->
+            <section class="messages" id="messages" hidden></section>
+
+            <!-- 底部输入区 -->
+            <div class="composer">
+                <div class="composer-card">
+                    <textarea id="input" rows="1" placeholder="你在此端发问，我在彼端回答。"></textarea>
+                    <button class="send-btn" id="send-btn" type="button" aria-label="发送" title="发送">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2"
+                                  stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 模型选择弹窗 -->
+    <div class="modal-overlay" id="modal" hidden>
+        <div class="modal">
+            <h2 class="modal-title">选择我们支持的模型</h2>
+            <div class="model-grid" id="model-grid"></div>
+            <button class="modal-close" id="modal-close" type="button">取消</button>
+        </div>
+    </div>
+
+    <!-- markdown 解析 + 代码高亮（CDN，失败则降级为纯文本展示） -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@9.1.6/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <script src="/js/chat.js"></script>
+</body>
+</html>

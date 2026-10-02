@@ -1,0 +1,246 @@
+:root {
+    --text-main: #f5f7fa;
+    --text-muted: rgba(245, 247, 250, 0.72);
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.16);
+    --accent-a: #7aa2ff;
+    --accent-b: #b18cff;
+    --accent-c: #67e8f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-main);
+    background: #0b1020 url("/images/background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* 半透明暗色/模糊遮罩，保证文字可读性 */
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background: rgba(8, 12, 28, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* ===== 顶部导航栏 ===== */
+.navbar {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+    border: 1px solid var(--glass-border);
+}
+
+.brand {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-link {
+    padding: 9px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    color: var(--text-main);
+    text-decoration: none;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.16);
+    transform: translateY(-1px);
+}
+
+/* ===== 核心主内容区 ===== */
+.hero {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.title {
+    font-size: clamp(34px, 6vw, 58px);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    background: linear-gradient(120deg, #ffffff 0%, var(--accent-c) 45%, var(--accent-b) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    text-shadow: 0 6px 28px rgba(122, 162, 255, 0.25);
+    margin-bottom: 18px;
+}
+
+.typewriter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 34px;
+    font-size: clamp(16px, 2.4vw, 22px);
+    color: var(--text-muted);
+    font-weight: 300;
+    letter-spacing: 0.8px;
+    margin-bottom: 40px;
+}
+
+.caret {
+    display: inline-block;
+    width: 2px;
+    height: 1.15em;
+    margin-left: 3px;
+    background: var(--accent-c);
+    animation: blink 0.85s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* ===== 问题输入框卡片 ===== */
+.input-card {
+    position: relative;
+    width: min(620px, 92vw);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+    padding: 18px 22px 18px 22px;
+    margin-bottom: 22px;
+}
+
+.input-card textarea {
+    width: 100%;
+    min-height: 60px;
+    resize: none;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text-main);
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: inherit;
+    padding-bottom: 44px;
+}
+
+.input-card textarea::placeholder {
+    color: rgba(245, 247, 250, 0.55);
+}
+
+.send-btn {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0b1020;
+    background: linear-gradient(135deg, var(--accent-c), var(--accent-a));
+    box-shadow: 0 6px 20px rgba(122, 162, 255, 0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.send-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 26px rgba(122, 162, 255, 0.6);
+}
+
+.send-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* ===== 开始体验按钮 ===== */
+.start-btn {
+    padding: 14px 46px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--text-main);
+    cursor: pointer;
+    border-radius: 14px;
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 8px 26px rgba(0, 0, 0, 0.28);
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.start-btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 34px rgba(122, 162, 255, 0.35);
+}
+
+@media (max-width: 560px) {
+    .navbar {
+        padding: 14px 18px;
+    }
+    .brand {
+        font-size: 17px;
+    }
+    .nav-link {
+        padding: 7px 13px;
+        font-size: 13px;
+    }
+    .typewriter {
+        margin-bottom: 28px;
+    }
+}

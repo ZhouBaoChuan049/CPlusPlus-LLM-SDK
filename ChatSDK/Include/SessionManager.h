@@ -10,12 +10,13 @@ namespace Cplusplus_LLM_Provider
     public:
         SessionManager(std::string dbname);
         ~SessionManager() = default ;
-        std::string CreatSession(const std::string& SessionName,const std::string ModelName);
+        std::string CreatSession(const std::string& SessionName,const std::string ModelName, const std::string userName = "");
         std::shared_ptr<Session> GetSession(const std::string& SessionId);
         bool AddMessage(const std::string SessionId , const Message& message);
         std::vector<Message> GetHistoryMessages(const std::string SessionId);
         void UpdateSessionTimesTamp(const std::string& SessionId);
         std::vector<std::string> GetSessionLists() const;
+        std::vector<std::shared_ptr<Session>> GetSessionsByUser(const std::string& userName) const;
         bool DeleteSession(const std::string& SessionId);
         void ClearAllSessions();
         size_t GetSessionCount() const;

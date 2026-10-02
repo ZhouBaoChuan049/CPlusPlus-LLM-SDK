@@ -7,13 +7,7 @@ namespace Cplusplus_LLM_Provider
 {
     bool KimiProvider::IsModelAvailable()
     {
-        if(!GetAvailable())
-        {
-            LogModule::CRITICAL("Kimi Model is not available!");
-            std::string Excepts("Kimi Model is not available");
-            throw Excepts;
-        }
-        return true;
+        return GetAvailable();
     }
     void KimiProvider::InitModel(
         std::shared_ptr<Config> Config)

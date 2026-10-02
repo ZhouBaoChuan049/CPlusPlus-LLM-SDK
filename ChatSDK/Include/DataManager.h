@@ -17,6 +17,7 @@ namespace Cplusplus_LLM_Provider
         bool deleteSession(const std::string& sessionId);
         std::vector<std::string> getAllSessionIds()const;
         std::vector<std::shared_ptr<Session>> getAllSessions()const;
+        std::vector<std::shared_ptr<Session>> getSessionsByUser(const std::string& username)const;
         bool clearAllSessions();
         size_t getSessionCount()const;
 
@@ -24,6 +25,11 @@ namespace Cplusplus_LLM_Provider
         bool insertMessage(const std::string& sessionId, const Message& message);
         std::vector<Message> getSessionMessages(const std::string& sessionId)const;
         bool deleteSessionMessages(const std::string& sessionId);
+
+        //用户数据
+        bool insertUser(const std::string& username, const std::string& passwordHash, const std::string& salt);
+        std::shared_ptr<User> getUser(const std::string& username)const;
+        std::vector<std::shared_ptr<User>> getAllUsers()const;
 
     private:
         bool InitDataBase();

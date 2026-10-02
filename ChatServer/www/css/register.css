@@ -1,0 +1,263 @@
+:root {
+    --dark-bg: #0a0e1f;
+    --dark-bg-2: #10162e;
+    --accent: #7aa2ff;
+    --accent-2: #b18cff;
+    --white: #ffffff;
+    --light-bg: #f4f6fb;
+    --input-bg: #f0f2f8;
+    --text-dark: #1b1f33;
+    --text-gray: #8a8fa8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-dark);
+    background: var(--light-bg);
+}
+
+.register-wrap {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+}
+
+/* ===== 左侧品牌展示区 ===== */
+.brand-side {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(122, 162, 255, 0.18), transparent 45%),
+        radial-gradient(circle at 80% 75%, rgba(177, 140, 255, 0.16), transparent 45%),
+        linear-gradient(160deg, var(--dark-bg) 0%, var(--dark-bg-2) 100%);
+    color: var(--white);
+    overflow: hidden;
+}
+
+/* 科技感网格 */
+.brand-side::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    background-size: 44px 44px;
+    pointer-events: none;
+}
+
+.brand-top {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 30px 38px;
+}
+
+.logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+}
+
+.brand-name {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.brand-card {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 48px;
+    max-width: 560px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    width: fit-content;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin-bottom: 26px;
+}
+
+.badge .star {
+    color: #f7d774;
+}
+
+.welcome-title {
+    font-size: clamp(40px, 5.5vw, 62px);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+    margin-bottom: 26px;
+}
+
+.slogan {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.slogan-bar {
+    width: 4px;
+    border-radius: 4px;
+    background: linear-gradient(180deg, var(--accent), var(--accent-2));
+    flex-shrink: 0;
+}
+
+.slogan-en {
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.92);
+    line-height: 1.55;
+    margin-bottom: 10px;
+}
+
+.slogan-zh {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.66);
+    line-height: 1.55;
+}
+
+.brand-footnote {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* ===== 右侧表单交互区 ===== */
+.form-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    background: var(--white);
+}
+
+.form-card {
+    width: min(420px, 100%);
+}
+
+.form-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.form-subtitle {
+    font-size: 14px;
+    color: var(--text-gray);
+    margin-bottom: 34px;
+}
+
+.field {
+    margin-bottom: 22px;
+}
+
+.field label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 9px;
+}
+
+.field input {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 14px;
+    border: 1px solid #e3e6ef;
+    background: var(--input-bg);
+    font-size: 15px;
+    color: var(--text-dark);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    font-family: inherit;
+}
+
+.field input::placeholder {
+    color: #b3b8cc;
+}
+
+.field input:focus {
+    background: #ffffff;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(122, 162, 255, 0.16);
+}
+
+.error-msg {
+    display: none;
+    font-size: 13px;
+    color: #e05252;
+    margin: -8px 0 16px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--white);
+    background: linear-gradient(135deg, #1b1f33 0%, #2a3050 100%);
+    box-shadow: 0 10px 28px rgba(27, 31, 51, 0.28);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px rgba(27, 31, 51, 0.38);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 880px) {
+    .register-wrap {
+        grid-template-columns: 1fr;
+    }
+    .brand-side {
+        min-height: 42vh;
+    }
+    .brand-card {
+        padding: 24px 28px;
+        max-width: none;
+    }
+    .brand-top {
+        padding: 20px 24px;
+    }
+}

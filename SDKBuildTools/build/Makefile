@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/konata/Project/CPlusPlus_LLM_SDK/BuildTools
+CMAKE_SOURCE_DIR = /home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/build
+CMAKE_BINARY_DIR = /home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/build/CMakeFiles /home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/build/CMakeFiles /home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/konata/Project/CPlusPlus_LLM_SDK/BuildTools/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/konata/Project/CPlusPlus_LLM_SDK/SDKBuildTools/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,221 +129,245 @@ ChatSDK/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/build
 .PHONY : ChatSDK/fast
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.o: home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.o
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.o
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.o: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.o
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.o
 
 # target to build an object file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.o
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.o
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.o
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.o
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.i: home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.i
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.i
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.i: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.i
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.i
 
 # target to preprocess a source file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.i
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.i
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.i
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.i
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.s: home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.s
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.s
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.s: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.s
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.s
 
 # target to generate assembly for a file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.s
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.cc.s
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.s
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.cc.s
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.o: home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.o
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.o
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.o: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.o
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.o
 
 # target to build an object file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.o
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.o
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.o
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.o
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.i: home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.i
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.i
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.i: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.i
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.i
 
 # target to preprocess a source file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.i
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.i
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.i
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.i
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.s: home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.s
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.s
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.s: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.s
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.s
 
 # target to generate assembly for a file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.s
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.cc.s
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.s
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc.s
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.o: home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.o
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.o
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.o: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.o
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.o
 
 # target to build an object file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.o
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.o
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.o
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.o
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.i: home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.i
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.i
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.i: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.i
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.i
 
 # target to preprocess a source file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.i
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.i
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.i
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.i
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.s: home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.s
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.s
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.s: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.s
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.s
 
 # target to generate assembly for a file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.s
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.cc.s
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.s
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.cc.s
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.o: home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.o
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.o
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.o: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.o
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.o
 
 # target to build an object file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.o
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.o
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.o
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.o
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.i: home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.i
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.i
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.i: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.i
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.i
 
 # target to preprocess a source file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.i
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.i
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.i
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.i
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.s: home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.s
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.s
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.s: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.s
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.s
 
 # target to generate assembly for a file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.s
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.cc.s
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.s
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.cc.s
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.o: home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.o
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.o
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.o: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.o
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.o
 
 # target to build an object file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.o
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.o
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.o
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.o
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.i: home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.i
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.i
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.i: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.i
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.i
 
 # target to preprocess a source file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.i
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.i
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.i
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.i
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.s: home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.s
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.s
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.s: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.s
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.s
 
 # target to generate assembly for a file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.s
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.cc.s
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.s
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.cc.s
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.o: home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.o
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.o
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.o: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.o
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.o
 
 # target to build an object file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.o
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.o
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.o
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.o
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.i: home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.i
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.i
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.i: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.i
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.i
 
 # target to preprocess a source file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.i
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.i
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.i
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.i
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.s: home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.s
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.s
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.s: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.s
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.s
 
 # target to generate assembly for a file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.s
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.cc.s
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.s
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc.s
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.o: home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.o
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.o
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.o: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.o
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.o
 
 # target to build an object file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.o
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.o
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.o
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.o
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.i: home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.i
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.i
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.i: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.i
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.i
 
 # target to preprocess a source file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.i
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.i
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.i
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.i
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.s: home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.s
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.s
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.s: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.s
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.s
 
 # target to generate assembly for a file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.s
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.cc.s
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.s
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.cc.s
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.o: home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.o
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.o
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.o: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.o
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.o
 
 # target to build an object file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.o
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.o
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.o
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.o
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.i: home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.i
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.i
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.i: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.i
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.i
 
 # target to preprocess a source file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.i
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.i
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.i
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.i
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.s: home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.s
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.s
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.s: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.s
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.s
 
 # target to generate assembly for a file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.s
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.cc.s
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.s
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.cc.s
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.o: home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.o
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.o
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.o: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.o
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.o
 
 # target to build an object file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.o
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.o
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.o
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.o
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.i: home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.i
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.i
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.i: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.i
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.i
 
 # target to preprocess a source file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.i
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.i
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.i
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.i
 
-home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.s: home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.s
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.s
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.s: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.s
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.s
 
 # target to generate assembly for a file
-home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.s
-.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.cc.s
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.s
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc.s
+
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.o: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.o
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.o
+
+# target to build an object file
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.o
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.o
+
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.i: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.i
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.i
+
+# target to preprocess a source file
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.i
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.i
+
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.s: home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.s
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.s
+
+# target to generate assembly for a file
+home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ChatSDK.dir/build.make CMakeFiles/ChatSDK.dir/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.s
+.PHONY : home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.cc.s
 
 # Help Target
 help:
@@ -354,33 +378,36 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ChatSDK"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.o"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.i"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatGPTProvider.s"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.o"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.i"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/ChatSDK.s"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.o"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.i"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/DataManager.s"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.o"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.i"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/DeepSeekProvider.s"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.o"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.i"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/KimiProvider.s"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.o"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.i"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/LLMManager.s"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.o"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.i"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/OllamaProvider.s"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.o"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.i"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/SessionManager.s"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.o"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.i"
-	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/Src/Util/LogModule.s"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.o"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.i"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatGPTProvider.s"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.o"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.i"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.s"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.o"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.i"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DataManager.s"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.o"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.i"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/DeepSeekProvider.s"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.o"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.i"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/KimiProvider.s"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.o"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.i"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.s"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.o"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.i"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/OllamaProvider.s"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.o"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.i"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/SessionManager.s"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.o"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.i"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.s"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.o"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.i"
+	@echo "... home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/Util/LogModule.s"
 .PHONY : help
 
 

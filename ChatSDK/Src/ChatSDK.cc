@@ -60,9 +60,8 @@ namespace Cplusplus_LLM_Provider
 
     void ChatSDK::initProviders(const std::vector<std::shared_ptr<Config>>& configs)
     {
-        std::unordered_set<std::string> Check ;//还是去重操作
-        for(auto Conf : configs)
-        {
+        for(auto Conf : configs){
+            std::unordered_set<std::string> Check ;//还是去重操作
             if(auto Config = std::dynamic_pointer_cast<APIConfig>(Conf))
             {
                 std::string ModelName = Config->_modelName;
@@ -138,14 +137,14 @@ namespace Cplusplus_LLM_Provider
         LogModule::INFO("模型{}初始化成功!",modelName);
         return true ;
     }
-    std::string ChatSDK::createSession(const std::string SessionName, const std::string& modelName)
+    std::string ChatSDK::createSession(const std::string SessionName, const std::string& modelName, const std::string userName)
     {
         if(_initialized == false)
         {
             LogModule::ERROR("错误!模型未初始化.");
             return "" ;
         }
-        std::string sessionid = _sessionManager.CreatSession(SessionName, modelName);
+        std::string sessionid = _sessionManager.CreatSession(SessionName, modelName, userName);
         return sessionid ;//这里应该不会出问题
     }
     std::shared_ptr<Session> ChatSDK::getSession(const std::string& sessionId)
