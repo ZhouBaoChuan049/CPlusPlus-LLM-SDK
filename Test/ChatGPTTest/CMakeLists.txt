@@ -9,8 +9,8 @@ set(CMAKE_BUILD_TYPE Debug)
 
 add_executable(TestChatGpt
     ChatGptTestSend.cc  
-    ../../Src/Util/LogModule.cc
-    ../../Src/ChatGPTProvider.cc
+    ../../ChatSDK/Src/Util/LogModule.cc
+    ../../ChatSDK/Src/ChatGPTProvider.cc
 )
 
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
@@ -19,7 +19,7 @@ find_package(Threads REQUIRED)
 find_package(OpenSSL REQUIRED)
 
 # 项目头文件
-include_directories(../../Include)
+include_directories(../../ChatSDK/Include)
 
 target_compile_definitions(TestChatGpt
     PRIVATE

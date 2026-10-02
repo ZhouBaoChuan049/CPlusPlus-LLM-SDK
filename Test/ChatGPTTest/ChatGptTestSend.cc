@@ -1,8 +1,8 @@
 #include <iostream>
-#include "../../Include/Util/LogModule.h"
-#include "../../Include/ChatGPTProvider.h"
-#include "../../Include/LLMProvider.h"
-#include "../../Include/CommonStruct.h"
+#include "../../ChatSDK/Include/Util/LogModule.h"
+#include "../../ChatSDK/Include/ChatGPTProvider.h"
+#include "../../ChatSDK/Include/LLMProvider.h"
+#include "../../ChatSDK/Include/CommonStruct.h"
 #include <gtest/gtest.h>
 
 using namespace Cplusplus_LLM_Provider ;

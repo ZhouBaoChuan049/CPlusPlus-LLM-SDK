@@ -9,11 +9,11 @@ set(CMAKE_BUILD_TYPE Debug)
 
 add_executable(TestLLMManager
     LLMManagerTest.cc   
-    ../../Src/Util/LogModule.cc
-    ../../Src/LLMManager.cc
-    ../../Src/DeepSeekProvider.cc
-    ../../Src/ChatGPTProvider.cc
-    ../../Src/OllamaProvider.cc
+    ../../ChatSDK/Src/Util/LogModule.cc
+    ../../ChatSDK/Src/LLMManager.cc
+    ../../ChatSDK/Src/DeepSeekProvider.cc
+    ../../ChatSDK/Src/ChatGPTProvider.cc
+    ../../ChatSDK/Src/OllamaProvider.cc
 )
 
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
@@ -22,7 +22,7 @@ find_package(Threads REQUIRED)
 find_package(OpenSSL REQUIRED)
 
 # 项目头文件
-include_directories(../../Include)
+include_directories(../../ChatSDK/Include)
 
 target_compile_definitions(TestLLMManager
     PRIVATE

@@ -10,8 +10,8 @@ set(CMAKE_BUILD_TYPE Debug)
 
 add_executable(KimiProviderTest
     KimiProviderTest.cc
-    ../../Src/KimiProvider.cc
-    ../../Src/Util/LogModule.cc
+    ../../ChatSDK/Src/KimiProvider.cc
+    ../../ChatSDK/Src/Util/LogModule.cc
 )
 
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
@@ -20,7 +20,7 @@ find_package(Threads REQUIRED)
 find_package(OpenSSL REQUIRED)
 
 # 项目头文件
-include_directories(../../Include)
+include_directories(../../ChatSDK/Include)
 
 target_compile_definitions(KimiProviderTest
     PRIVATE

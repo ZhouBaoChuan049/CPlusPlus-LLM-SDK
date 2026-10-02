@@ -1,8 +1,8 @@
 #include <iostream>
-#include "../../Include/Util/LogModule.h"
-#include "../../Include/OllamaProvider.h"
-#include "../../Include/LLMProvider.h"
-#include "../../Include/CommonStruct.h"
+#include "../../ChatSDK/Include/Util/LogModule.h"
+#include "../../ChatSDK/Include/OllamaProvider.h"
+#include "../../ChatSDK/Include/LLMProvider.h"
+#include "../../ChatSDK/Include/CommonStruct.h"
 #include <gtest/gtest.h>
 using namespace Cplusplus_LLM_Provider ;
 #ifdef __OLLAMA_SEND_MESSAGE_TEST__

@@ -10,15 +10,15 @@ set(CMAKE_BUILD_TYPE Debug)
 add_executable(ChatServerTest
     ChatServerTest.cc
     ../../ChatServer/ChatServer.cc
-    ../../Src/Util/LogModule.cc
-    ../../Src/DataManager.cc
-    ../../Src/SessionManager.cc
-    ../../Src/ChatSDK.cc
-    ../../Src/LLMManager.cc
-    ../../Src/DeepSeekProvider.cc
-    ../../Src/ChatGPTProvider.cc
-    ../../Src/KimiProvider.cc
-    ../../Src/OllamaProvider.cc
+    ../../ChatSDK/Src/Util/LogModule.cc
+    ../../ChatSDK/Src/DataManager.cc
+    ../../ChatSDK/Src/SessionManager.cc
+    ../../ChatSDK/Src/ChatSDK.cc
+    ../../ChatSDK/Src/LLMManager.cc
+    ../../ChatSDK/Src/DeepSeekProvider.cc
+    ../../ChatSDK/Src/ChatGPTProvider.cc
+    ../../ChatSDK/Src/KimiProvider.cc
+    ../../ChatSDK/Src/OllamaProvider.cc
 )
 
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
@@ -27,7 +27,7 @@ find_package(Threads REQUIRED)
 find_package(OpenSSL REQUIRED)
 
 # 项目头文件：SDK 头文件 + ChatServer 头文件
-include_directories(../../Include ../../ChatServer)
+include_directories(../../ChatSDK/Include ../../ChatServer)
 
 target_compile_definitions(ChatServerTest
     PRIVATE
