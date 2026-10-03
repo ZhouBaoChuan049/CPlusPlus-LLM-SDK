@@ -1,23 +1,7 @@
 # C++ LLM SDK
+## **A C++17 multi-model LLM SDK integrating cloud APIs and local Ollama models, with a unified interface and ChatPlatform built on top.**
 
-
-<div align="center">
-
-## 
-
-**A C++17 multi-model LLM SDK integrating cloud APIs and local Ollama models, with a unified interface and ChatPlatform built on top.**
-
-</div>
-
-
-# 项目简介
-
-&emsp;&emsp;**CPlusPlus_LLM_SDK** 是一个基于 **C++17** 开发的多模型大语言模型接入 SDK。
-&emsp;&emsp;项目从统一接口抽象出发，将不同大模型服务封装为独立 Provider，在上层提供统一的模型初始化、模型查询、普通对话和流式对话接口。
-&emsp;&emsp;在 SDK 的基础上，项目进一步实现了一个基于 C++ 的 **AI Chat Server**，提供 Web 页面、会话管理、历史消息持久化、用户注册/登录以及 SSE 流式聊天等能力。
-
----
-# 技术栈
+> **状态：** Completed · **版本：** v1.0.0 · **语言标准：** C++17
 
 <p align="center">
   <img src="https://img.shields.io/badge/C++17-00599C?style=flat&logo=cplusplus&logoColor=white" />
@@ -35,7 +19,9 @@
   <img src="https://img.shields.io/badge/Ollama-000000?style=flat&logo=ollama&logoColor=white" />
 </p>
 
-
+&emsp;&emsp;**CPlusPlus_LLM_SDK** 是一个基于 **C++17** 开发的多模型大语言模型接入 SDK。
+&emsp;&emsp;项目从统一接口抽象出发，将不同大模型服务封装为独立 Provider，在上层提供统一的模型初始化、模型查询、普通对话和流式对话接口。
+&emsp;&emsp;在 SDK 的基础上，项目进一步实现了一个基于 C++ 的 **AI Chat Server**，提供 Web 页面、会话管理、历史消息持久化、用户注册/登录以及 SSE 流式聊天等能力。
 
 # 项目目录结构
 
