@@ -1,0 +1,59 @@
+
+#Role：你是一位有十年工作经验的后端开发者。
+#描述：你现在要给这个项目设计一套用户管理模块。
+#要求：模块与当前代码中的会话管理，大模型管理等模块高度解耦。写代码的时候不必一个文件一个文件的写，我接下来会教你怎么写的
+思维链条，你顺着我的思维链条写就可以。
+# 详细内容：
+一、数据结构设计
+你首先需要在CommonStruct.h中添加一个新的结构：User，这个结构里面有三个字段：用户名称、用户的密码、由该用户历史创建的会话
+集合Vector<Sesstion>。
+
+二、用户管理类设计
+你需要在ChatSDK的Include目录下创建文件UserManager.h并在src目录下创建UserManager.cc，用于组织管理里用户信息。内部实现的
+方法我们先放一边，直接来到顶层：ChatServer
+
+三、处理用户请求
+在ChatServer层中设计HandleRegister方法（使用POST方法），并把它注册到Httplib的路由中。现在模拟场景：假设用户注册，浏览器发
+送请求报文：
+POST /api/register HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+Content-Length: 39
+{
+    "username": "konata",
+    "password": "123456"
+}
+你的Handle方法应该解析出    "username": "konata",和    "password": "123456"。然后——注意！我在最顶层，注册和登录的页面是写在
+一起的，只有一个按钮（注册/登录）。所以你接下来需要做的是查找这个账号是否存在于内存/服务器中。好，继续跟我来。
+
+四、来到最底层——DataManager，就是我写好的那个，你继续追加
+新增用户数据的增加和查找方法。使用SQLite数据库。可以参考我别的代码。
+
+五、回到UserManager层，用户管理类设计
+UserManager初始化时。我们需要把数据库中所有的用户数据全部获取上来。使用unordered_map键值对存放[用户名称:用户密码]。
+UserManager设计一个查找方法：通过上层输入的用户名称查找内存和数据库，如果查找到了返回该用户名的密码。如果没有查找到，返回
+一个标志，可以是空字符串可以是-1等等。UserManager设计一个增加方法，底层调用DataManager中的插入新的用户数据方法。上层接收
+用户名称和用户的密码。
+
+六、设计密码哈希
+直接放在ChatServer中，你需要设计一套简易的密码哈希算法。以便我们用户输入的密码可以安全存放在数据库中。
+Argon2id 是一种专门用来“存密码”的密码哈希算法。你需要实现一套简化版本的。比如我举个例子：
+std::string SimpleArgon2id(const std::string& password,
+                           const std::string& salt){
+    std::hash<std::string> hasher;
+    std::string data = password + salt;
+    // 模拟 Argon2id 的多轮计算
+    for (int i = 0; i < 100000; ++i)
+        data = std::to_string(hasher(data + salt + std::to_string(i)));
+    // 转成十六进制字符串
+    std::stringstream ss;
+    ss << std::hex << hasher(data);
+    return ss.str();
+}
+于是我们得到了哈希转化后的“密码”。
+
+六、回到的ChatServer
+你的Handle方法应该解析出    "username": "konata",和    "password": "123456"。然后对密码做一次密码哈希，调用UserManager的查找方法
+输入username查找，如果找到了，获取到返回值密码哈希结果。对比两个密码哈希结果。如果一致：登录成功——获取这个用户的所有会话内容，
+通过_chatsdk填入会话管理类中进行维护。如果不一致，调用UserManager中的插入新用户信息方法。将用户名和密码放入数据库中长期存储。
+注意记得给内存也保存一份。

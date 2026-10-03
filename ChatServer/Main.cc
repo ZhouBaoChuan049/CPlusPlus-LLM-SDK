@@ -3,6 +3,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include "Daemon.hpp"
 #include "ChatServer.h"
 
 DEFINE_string(host, "0.0.0.0", "服务器绑定的地址");
@@ -56,7 +57,6 @@ static void PrintHelp(const char* program)
         << "提供的接口:\n"
         << "  GET  /pages/home.html          主页\n"
         << "  GET  /pages/register.html      注册页\n"
-        << "  GET  /pages/author.html        作者页\n"
         << "  GET  /pages/chatroom.html      聊天室页面\n"
         << "  GET  /images/*                 静态图片资源\n"
         << "  GET  /api/sessions             创建会话\n"
@@ -112,6 +112,7 @@ static bool ValidateConfig(const ChatServerModule::SdkConfig& skdconfigs)
 
 int main(int argc, char* argv[])
 {
+    DaemonModule::EnableDaemon(0,0);//守护化
     for (int i = 1; i < argc; ++i){
         std::string arg = argv[i];
         if (arg == "-h" || arg == "--help"){

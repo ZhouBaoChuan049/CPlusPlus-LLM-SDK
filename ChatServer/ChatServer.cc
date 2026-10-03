@@ -18,7 +18,7 @@ namespace ChatServerModule
             "ChatServerLog",
             "ServerLog.dat",
             spdlog::level::info,
-            FILE_MODE
+            ROTATING_MODE
         );
         //服务器初始化
         if(_chatserver != nullptr){
@@ -95,7 +95,6 @@ namespace ChatServerModule
         //前后端约定一套URL规则:
         // GET /pages/home.html
         // GET /pages/register.html
-        // GET /pages/author.html
         // GET /pages/chatroom.html
         // GET /images/*
         
@@ -114,9 +113,6 @@ namespace ChatServerModule
         });
         _chatserver->Get("/pages/register.html",[this](const httplib::Request& request, httplib::Response& response){
             HandleGetRegisterPage(request,response);
-        });
-        _chatserver->Get("/pages/author.html",[this](const httplib::Request& request, httplib::Response& response){
-            HandleGetAuthorPage(request,response);
         });
         _chatserver->Get("/pages/chatroom.html",[this](const httplib::Request& request, httplib::Response& response){
             HandleGetChatRoomPage(request,response);
@@ -236,10 +232,6 @@ namespace ChatServerModule
     void ChatServer::HandleGetRegisterPage(const httplib::Request&, httplib::Response& response)
     {
         SendStaticResource(response,"/pages/register.html","text/html; charset=utf-8");
-    }
-    void ChatServer::HandleGetAuthorPage(const httplib::Request&, httplib::Response& response)
-    {
-        SendStaticResource(response,"/pages/author.html","text/html; charset=utf-8");
     }
     void ChatServer::HandleGetChatRoomPage(const httplib::Request&, httplib::Response& response)
     {

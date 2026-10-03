@@ -64,9 +64,9 @@ body {
 }
 
 .brand {
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
@@ -227,6 +227,39 @@ body {
     background: rgba(255, 255, 255, 0.18);
     transform: translateY(-2px);
     box-shadow: 0 14px 34px rgba(122, 162, 255, 0.35);
+}
+
+/* ===== 功能预告胶囊（不可点击，仅展示能力） ===== */
+.feature-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    max-width: 760px;
+    margin-top: 30px;
+}
+
+.pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 14px;
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    user-select: none;
+    cursor: default;
+}
+
+.pill svg {
+    width: 18px;
+    height: 18px;
+    opacity: 0.9;
+    flex-shrink: 0;
 }
 
 @media (max-width: 560px) {

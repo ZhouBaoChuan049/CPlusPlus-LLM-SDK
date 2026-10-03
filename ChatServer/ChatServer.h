@@ -49,7 +49,6 @@ namespace ChatServerModule
         //资源获取
         void HandleGetHomePage(const httplib::Request& request, httplib::Response& response);
         void HandleGetRegisterPage(const httplib::Request& request, httplib::Response& response);
-        void HandleGetAuthorPage(const httplib::Request& request, httplib::Response& response);
         void HandleGetChatRoomPage(const httplib::Request& request, httplib::Response& response);
         void HandleImage(const httplib::Request& request, httplib::Response& response);
         //请求处理

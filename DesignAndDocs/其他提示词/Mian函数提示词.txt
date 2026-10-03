@@ -1,0 +1,15 @@
+你是一位C++高级工程师
+main方法需求：
+1. 使用gflags库定义ServerConfig所需要的参数，参数可以通过命令行进行提供
+    - 服务器绑定的地址0.0.0.0，端口号8080
+    - 日志级别：INFO
+    - deepseek、chatgpt、kimi等云端模型的apikey，不需要通过命令行参数提供，直接从环境变量中获取
+    - 温度值的默认值为0.7, 最大token数默认是2048
+    - 参数可以通过命令行提供，也可以从配置文件ChatServer.conf加载，配置文件生成到ChatServer的目录中
+2. 生成main方法
+   - 通过gflags解析命令行参数，参数可能来自命令行，也可能来自配置文件
+   - 对这些配置参数进行安全检查，比如：温度值在0~2之间，最大token数不能为负数，apikey至少有一个不为空，ollama配置参数都不能为空
+3. 给用户提供使用ChatServer的帮助说明
+   - 当用户输入./AIChatServer -h 或者 ./AIChatServer --help时，在终端显示帮助说明
+   - 当用户输入./AIChatServer -v 或者 ./AIChatServer --version时，在终端显示版本号，假设版本号默认从1.0.0开始
+   - 使用说明中显示：AIChatServer的参数选项的说明，以及使用案例，以及ChatServer提供的接口的说明

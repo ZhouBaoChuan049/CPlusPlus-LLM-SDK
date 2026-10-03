@@ -8,6 +8,7 @@
 
     // ===== 全局状态 =====
     let currentSessionId = null;   // 当前会话 id，null 表示尚未创建
+    let currentModel = null;       // 当前会话使用的模型名
     let pendingMessage = "";       // 点击发送时暂存的消息
 
     // ===== DOM 引用 =====
@@ -22,6 +23,7 @@
     const modalEl = document.getElementById("modal");
     const modelGridEl = document.getElementById("model-grid");
     const modalCloseBtn = document.getElementById("modal-close");
+    const mainEl = document.querySelector(".main");
 
     // ===== 初始化用户信息 =====
     welcomeNameEl.textContent = username;
@@ -43,6 +45,17 @@
             .replace(/>/g, "&gt;")
             .replace(/"/g, "&quot;")
             .replace(/'/g, "&#39;");
+    }
+
+    // 根据模型名/描述匹配提供方图标（图片位于 /images/ 下）
+    function getModelIcon(name, desc) {
+        const n = (name || "").toLowerCase();
+        const d = (desc || "").toLowerCase();
+        if (n.indexOf("kimi") !== -1) return "/images/kimi.jpg";
+        if (n.indexOf("gpt") !== -1) return "/images/gpt.jpg";
+        if (n.indexOf("ollama") !== -1 || d.indexOf("ollama") !== -1) return "/images/ollama.jpg";
+        if (n.indexOf("deepseek") !== -1) return "/images/deepseek.jpg";
+        return "/images/logo.jpg";
     }
 
     function renderMarkdown(text) {
@@ -149,14 +162,46 @@
     }
 
     // ===== 视图切换 =====
+    // 切换聊天状态：empty（居中大输入框）/ chatting（底部紧凑输入框）
+    function setChatState(chatting) {
+        const composer = document.querySelector(".composer");
+        const first = composer ? composer.getBoundingClientRect() : null;
+
+        if (chatting) {
+            welcomeEl.hidden = true;
+            messagesEl.hidden = false;
+            mainEl.classList.remove("is-empty");
+        } else {
+            welcomeEl.hidden = false;
+            messagesEl.hidden = true;
+            mainEl.classList.add("is-empty");
+        }
+
+        // FLIP：让输入框在「居中 / 底部」之间平滑移动，避免瞬间跳动
+        if (composer && first) {
+            const last = composer.getBoundingClientRect();
+            const dy = first.top - last.top;
+            if (Math.abs(dy) > 1) {
+                composer.style.transition = "none";
+                composer.style.transform = "translateY(" + dy + "px)";
+                composer.offsetHeight; // 强制回流，确保起始位移生效
+                composer.style.transition = "transform 0.35s cubic-bezier(0.22, 1, 0.36, 1)";
+                composer.style.transform = "translateY(0px)";
+                composer.addEventListener("transitionend", function handler() {
+                    composer.style.transition = "";
+                    composer.style.transform = "";
+                    composer.removeEventListener("transitionend", handler);
+                }, { once: true });
+            }
+        }
+    }
+
     function showWelcome() {
-        welcomeEl.hidden = false;
-        messagesEl.hidden = true;
+        setChatState(false);
     }
 
     function showConversation() {
-        welcomeEl.hidden = true;
-        messagesEl.hidden = false;
+        setChatState(true);
     }
 
     // ===== SSE 流式解析 =====
@@ -258,10 +303,21 @@
         const card = document.createElement("div");
         card.className = "session-item" + (s.id === currentSessionId ? " active" : "");
 
+        const body = document.createElement("div");
+        body.className = "session-body";
+
         const title = document.createElement("div");
         title.className = "session-title";
-        title.textContent = s.first_user_message || s.model || "新对话";
+        title.textContent = s.first_user_message || "新对话";
         title.title = title.textContent;
+
+        const model = document.createElement("div");
+        model.className = "session-model";
+        model.textContent = s.model || "";
+        model.title = s.model || "";
+
+        body.appendChild(title);
+        body.appendChild(model);
 
         const menuBtn = document.createElement("button");
         menuBtn.type = "button";
@@ -273,10 +329,10 @@
             toggleSessionMenu(menuBtn, s);
         });
 
-        card.appendChild(title);
+        card.appendChild(body);
         card.appendChild(menuBtn);
         card.addEventListener("click", function () {
-            loadSession(s.id);
+            loadSession(s.id, s.model);
         });
 
         sessionListEl.appendChild(card);
@@ -329,7 +385,7 @@
         } catch (e) { /* 忽略 */ }
     }
 
-    async function loadSession(sessionId) {
+    async function loadSession(sessionId, modelName) {
         try {
             const res = await fetch("/api/session/" + encodeURIComponent(sessionId) + "/history");
             const data = await res.json();
@@ -337,6 +393,9 @@
                 return;
             }
             currentSessionId = sessionId;
+            if (modelName) {
+                currentModel = modelName;
+            }
             messagesEl.innerHTML = "";
             (data.data || []).forEach(function (m) {
                 addHistoryMessage(m);
@@ -364,6 +423,7 @@
 
     function resetConversation() {
         currentSessionId = null;
+        currentModel = null;
         messagesEl.innerHTML = "";
         showWelcome();
         refreshSessionList();
@@ -393,10 +453,23 @@
 
                 const name = document.createElement("div");
                 name.className = "model-name";
-                name.textContent = m.name;
+
+                const icon = document.createElement("img");
+                icon.className = "model-icon";
+                icon.src = getModelIcon(m.name, m.desc);
+                icon.alt = "";
+
+                const nameText = document.createElement("span");
+                nameText.className = "model-text";
+                nameText.textContent = m.name;
+
+                name.appendChild(icon);
+                name.appendChild(nameText);
+
                 const desc = document.createElement("div");
                 desc.className = "model-desc";
                 desc.textContent = m.desc || "";
+                desc.title = m.desc || "";
                 card.appendChild(name);
                 card.appendChild(desc);
 
@@ -431,6 +504,7 @@
             if (!currentSessionId) {
                 currentSessionId = await createSession(model, message);
             }
+            currentModel = model;
             await streamReply(currentSessionId, message, aiContent);
             refreshSessionList();
         } catch (e) {
@@ -447,7 +521,13 @@
             return;
         }
         pendingMessage = text;
-        openModal();
+        if (currentSessionId) {
+            // 已有会话：沿用当前模型，直接发送，不再弹模型选择
+            startChat(currentModel, text);
+        } else {
+            // 新会话：第一句话先选模型
+            openModal();
+        }
     }
 
     sendBtn.addEventListener("click", onSend);
