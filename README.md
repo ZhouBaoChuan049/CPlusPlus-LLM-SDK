@@ -22,7 +22,7 @@
 ## 架构
 
 
-
+![C++ LLM SDK 架构图](DesignAndDocs/架构图/Cppsdk架构图.png)
 
 ## 仓库结构
 
