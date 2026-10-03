@@ -207,7 +207,6 @@ namespace Cplusplus_LLM_Provider
         httplib::Client client(GetAPIAccessAddress());
         client.set_connection_timeout(60,0);
         client.set_read_timeout(120,0);
-        client.set_proxy("172.17.112.1", 10090);
         
         httplib::Headers _handers = {
             {"Content-Type" , "application/json"},

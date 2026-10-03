@@ -3,6 +3,7 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <unistd.h>
 #include "Daemon.hpp"
 #include "ChatServer.h"
 
@@ -112,7 +113,7 @@ static bool ValidateConfig(const ChatServerModule::SdkConfig& skdconfigs)
 
 int main(int argc, char* argv[])
 {
-    DaemonModule::EnableDaemon(0,0);//守护化
+    DaemonModule::EnableDaemon(1,0);//守护化(不 chdir，需从 ChatServer/ 目录启动)
     for (int i = 1; i < argc; ++i){
         std::string arg = argv[i];
         if (arg == "-h" || arg == "--help"){
@@ -174,12 +175,7 @@ int main(int argc, char* argv[])
     }
     std::cout << "AIChatServer 已启动: " << FLAGS_host << ":" << FLAGS_port << std::endl;
 
-    std::string line;
-    while (std::getline(std::cin, line)){
-        if (line == "quit" || line == "exit"){
-            break;
-        }
-    }
+    pause();
     server.Stop();
     return 0;
 }
