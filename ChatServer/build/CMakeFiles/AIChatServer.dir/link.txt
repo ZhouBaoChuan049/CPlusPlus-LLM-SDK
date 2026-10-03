@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/AIChatServer.dir/Main.cc.o CMakeFiles/AIChatServer.dir/ChatServer.cc.o -o AIChatServer   -L/usr/local/ChatSDK/lib  -Wl,-rpath,/usr/local/ChatSDK/lib -lChatSDK -ljsoncpp -lfmt -lspdlog -lgflags /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so -lsqlite3 

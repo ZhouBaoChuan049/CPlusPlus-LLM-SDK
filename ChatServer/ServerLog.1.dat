@@ -1,8 +1,0 @@
-[14 : 19 : 25][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][23  ]Model:kimi-k2.6Have Been Registred
-[14 : 19 : 25][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][31  ]kimi-k2.6模型注册成功
-[14 : 19 : 25][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][56  ]模型未注册!
-[14 : 19 : 25][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][23  ]Model:deepseek-r1:1.5bHave Been Registred
-[14 : 19 : 25][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][47  ]deepseek-r1:1.5b模型注册成功
-[14 : 19 : 25][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][114 ]模型deepseek-flash初始化成功!
-[14 : 19 : 25][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][114 ]模型gpt-5.5初始化成功!
-[14 : 19 : 25][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][114 ]模型kimi-k2.6初始化成功!

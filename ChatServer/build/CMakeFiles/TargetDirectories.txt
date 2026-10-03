@@ -1,3 +1,0 @@
-/home/konata/Project/CPlusPlus_LLM_SDK/ChatServer/build/CMakeFiles/AIChatServer.dir
-/home/konata/Project/CPlusPlus_LLM_SDK/ChatServer/build/CMakeFiles/edit_cache.dir
-/home/konata/Project/CPlusPlus_LLM_SDK/ChatServer/build/CMakeFiles/rebuild_cache.dir

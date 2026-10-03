@@ -1,8 +1,0 @@
-[14 : 19 : 25][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/UserManager.cc][16  ]从数据库加载用户数据1条成功!
-[14 : 19 : 25][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][56  ]模型未注册!
-[14 : 19 : 25][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][23  ]Model:deepseek-flashHave Been Registred
-[14 : 19 : 25][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][19  ]deepseek-flash模型注册成功
-[14 : 19 : 25][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][56  ]模型未注册!
-[14 : 19 : 25][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][23  ]Model:gpt-5.5Have Been Registred
-[14 : 19 : 25][info   ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/ChatSDK.cc][25  ]gpt-5.5模型注册成功
-[14 : 19 : 25][error  ][/home/konata/Project/CPlusPlus_LLM_SDK/ChatSDK/Src/LLMManager.cc][56  ]模型未注册!
